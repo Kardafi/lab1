@@ -4,7 +4,7 @@
 #include <iomanip>
 #include "ModelARX.h"
 
-#define jhkj  // ustaw na MAIN aby skompilować program docelowy / ustaw na DEBUG aby skompilować program testujacy 
+#define dasdas  // ustaw na MAIN aby skompilować program docelowy / ustaw na DEBUG aby skompilować program testujacy 
 
 #ifdef DEBUG1
 

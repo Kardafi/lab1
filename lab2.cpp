@@ -241,8 +241,8 @@ using namespace std;
 int main()
 {
 	// Krok 1: Inicjalizacja obiektów modelu ARX i regulatora PID
-	ModelARX model({ -0.4,0.2 }, { 0.3, 0.1 }, 2, 0);
-	RegulatorPID regulator(0.5, 0.1, 0.2);
+	ModelARX model({ -0.4,0.2 }, { 0.3, 0.1 }, 0, 0);
+	RegulatorPID regulator(0.5, 10, 0.2);
 
 	// Krok 2: Inicjalizacja funktora
 	Funktor funktor;
@@ -254,7 +254,7 @@ int main()
 	// Krok 4: Wyświetlenie wyniku
 	//std::cout << "Wartosc regulowana: " << wartoscRegulowana << std::endl;
 	for (int i = 0; i < 100; ++i) {
-		double y = funktor(model, regulator, 2.0);
+		double y = funktor(model, regulator, wartoscZadana);
 		std::cout << "Krok " << i << ": y = " << y << std::endl;
 	}
 

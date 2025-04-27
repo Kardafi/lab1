@@ -117,13 +117,3 @@ double ModelARX::symuluj(double wejscie) {
 
     return wynik;
 }
-
-double ModelARX::getWyjscie()
-{
-    return pamiecWyjscie.front();
-}
-
-//todo d³uzsza degue zeby przechowywac opóŸnienie (k) o tyle ile k i mno¿enie robimy ustawiaj¹c iteratory
-// pierwsze elementy bed¹ pomijane
-//                          a               b         k, szum
-//ModelARX instancjaTestowa({ -0.4,0.2 }, { 0.6, 0.3 }, 2, 0);
