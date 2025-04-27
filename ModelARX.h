@@ -23,11 +23,15 @@ private:
 
 public:
     ModelARX(const std::vector<double>& _A, const std::vector<double>& _B, unsigned int _k, int _mocSzumu);
+    ModelARX(const std::string& sciezkaPliku);
     ~ModelARX();
+
+    void ZapiszDoPlikuJSON(const std::string& filename) const;
 
 
     double symuluj(double wejscie) override;
 
+    double getWyjscie(); //zwraca ostatnie wyjscie ModelARX
     
 
 
