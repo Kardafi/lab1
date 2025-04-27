@@ -37,8 +37,9 @@ double ModelARX::symuluj(double wejscie) {
     pamiecWejscie.pop_back();
 
 	double wynik = std::inner_product(B.begin(), B.end(), pamiecWejscie.begin() + opoznienie, 0.0); //iloczyn skalarny wspolczynnika B i pamieci wejscia
-	wynik += std::inner_product(A.begin(), A.end(), pamiecWyjscie.begin(), 0.0); //iloczyn skalarny wspolczynnika A i pamieci wyjscia
+	wynik -= std::inner_product(A.begin(), A.end(), pamiecWyjscie.begin(), 0.0); //iloczyn skalarny wspolczynnika A i pamieci wyjscia
 	//wynik += dodajSzum(); //dodanie szumu
+
 
 	pamiecWyjscie.push_front(wynik); //aktualizacja pamieci wyjscia
     pamiecWyjscie.pop_back();
