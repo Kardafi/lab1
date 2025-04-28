@@ -3,7 +3,7 @@
 #include <vector>
 #include <iomanip>
 
-#define MAIN2
+#define sdasd
 
 #include "RegulatorPID.h"
 #include "ModelARX.h"

@@ -128,17 +128,28 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Funktor.cpp" />
+    <ClCompile Include="Generator.cpp" />
+    <ClCompile Include="GeneratorDekorator.cpp" />
+    <ClCompile Include="GeneratorStala.cpp" />
     <ClCompile Include="lab1.cpp" />
     <ClCompile Include="lab2.cpp" />
+    <ClCompile Include="lab3.cpp" />
     <ClCompile Include="ModelARX.cpp" />
     <ClCompile Include="ObiektSISO.cpp" />
     <ClCompile Include="RegulatorPID.cpp" />
+    <ClCompile Include="SygnalProstokatnyDekorator.cpp" />
+    <ClCompile Include="SygnalSinusDekorator.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Funktor.h" />
+    <ClInclude Include="Generator.h" />
+    <ClInclude Include="GeneratorDekorator.h" />
+    <ClInclude Include="GeneratorStala.h" />
     <ClInclude Include="ModelARX.h" />
     <ClInclude Include="ObiektSISO.h" />
     <ClInclude Include="RegulatorPID.h" />
+    <ClInclude Include="SygnalProstokatnyDekorator.h" />
+    <ClInclude Include="SygnalSinusDekorator.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
