@@ -1,11 +1,20 @@
 #pragma once
+
+/// <summary>
+/// Abstrakcyjna klasa bazowa dla wszystkich generatorów sygna³ów.
+/// </summary>
 class Generator
 {
 public:
+    /// <summary>
+    /// Wirtualny destruktor klasy Generator.
+    /// Umo¿liwia bezpieczne usuwanie obiektów pochodnych przez wskaŸnik do klasy bazowej.
+    /// </summary>
+    virtual ~Generator() = default;
 
-	virtual ~Generator() = default;
-	
-	virtual double generuj()=0;
-
+    /// <summary>
+    /// Generuje kolejn¹ próbkê sygna³u.
+    /// </summary>
+    /// <returns>Wygenerowana próbka jako liczba zmiennoprzecinkowa (double).</returns>
+    virtual double generuj() = 0;
 };
-

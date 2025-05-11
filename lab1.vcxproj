@@ -136,9 +136,12 @@
     <ClCompile Include="lab3.cpp" />
     <ClCompile Include="ModelARX.cpp" />
     <ClCompile Include="ObiektSISO.cpp" />
+    <ClCompile Include="OgraniczenieAmplitudyDekorator.cpp" />
     <ClCompile Include="RegulatorPID.cpp" />
+    <ClCompile Include="SygnalBialySzum.cpp" />
     <ClCompile Include="SygnalProstokatnyDekorator.cpp" />
     <ClCompile Include="SygnalSinusDekorator.cpp" />
+    <ClCompile Include="SygnalTrojkatnyDekorator.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Funktor.h" />
@@ -147,9 +150,12 @@
     <ClInclude Include="GeneratorStala.h" />
     <ClInclude Include="ModelARX.h" />
     <ClInclude Include="ObiektSISO.h" />
+    <ClInclude Include="OgraniczenieAmplitudyDekorator.h" />
     <ClInclude Include="RegulatorPID.h" />
+    <ClInclude Include="SygnalBialySzum.h" />
     <ClInclude Include="SygnalProstokatnyDekorator.h" />
     <ClInclude Include="SygnalSinusDekorator.h" />
+    <ClInclude Include="SygnalTrojkatnyDekorator.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

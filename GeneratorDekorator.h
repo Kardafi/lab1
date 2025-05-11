@@ -1,12 +1,27 @@
 #pragma once
 #include "Generator.h"
-class GeneratorDekorator : public Generator 
+
+/// <summary>
+/// Klasa bazowa dla dekoratorów generatorów sygna³ów.
+/// Umo¿liwia rozszerzanie dzia³ania innych generatorów przy u¿yciu wzorca Dekorator.
+/// </summary>
+class GeneratorDekorator : public Generator
 {
 public:
-	Generator& dekorowanyGenerator;
+    /// <summary>
+    /// Referencja do dekorowanego generatora.
+    /// </summary>
+    Generator& dekorowanyGenerator;
 
-	GeneratorDekorator(Generator& _generator);
-	
-	double generuj() =0;
+    /// <summary>
+    /// Konstruktor dekoratora generatora.
+    /// </summary>
+    /// <param name="_generator">Referencja do generatora, który ma byæ dekorowany.</param>
+    GeneratorDekorator(Generator& _generator);
+
+    /// <summary>
+    /// Generuje próbkê sygna³u z rozszerzon¹ funkcjonalnoœci¹.
+    /// </summary>
+    /// <returns>Wygenerowana próbka jako liczba zmiennoprzecinkowa (double).</returns>
+    virtual double generuj() = 0;
 };
-

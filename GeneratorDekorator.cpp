@@ -5,5 +5,8 @@ GeneratorDekorator::GeneratorDekorator(Generator& _generator)
 {
 }
 
-
+double GeneratorDekorator::generuj()
+{
+	return dekorowanyGenerator.generuj();
+}
 

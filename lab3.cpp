@@ -4,6 +4,9 @@
 #include "GeneratorDekorator.h"
 #include "SygnalSinusDekorator.h"
 #include "SygnalProstokatnyDekorator.h"
+#include "SygnalTrojkatnyDekorator.h"
+#include "OgraniczenieAmplitudyDekorator.h"
+#include "SygnalBialySzum.h"
 
 
 #define MAIN3
@@ -11,17 +14,17 @@
 #ifdef MAIN3
 
 int main() {
-    GeneratorStala baza(0.0);
-    SygnalSinusDekorator sinus(baza, 1.0, 5.0);
-    SygnalProstokatnyDekorator prostokat(sinus, 2.0, 10.0, 50.0);
 
-    for (int i = 0; i < 40; ++i) {
-        std::cout << prostokat.generuj() << std::endl;
+	GeneratorStala baza(0.0);
+	SygnalBialySzum szum(baza, 0.0);
+	SygnalTrojkatnyDekorator trojkat(szum, 0.0, 30);
+	SygnalSinusDekorator sinus(trojkat, 0.0, 10, 0.5);
+	SygnalProstokatnyDekorator prostokat(sinus, 5.0, 10, 0.5);
+	OgraniczenieAmplitudyDekorator ograniczenie(prostokat, 10.0);
+
+    for (int i = 0; i < 100; ++i) {
+        std::cout << ograniczenie.generuj() << std::endl;
     }
-
- /*   for (int i = 0; i < 20; ++i) {
-        std::cout << sinus.generuj() << std::endl;
-    }*/
 
 
     return 0;

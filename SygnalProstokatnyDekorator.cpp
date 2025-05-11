@@ -1,18 +1,15 @@
 #include "SygnalProstokatnyDekorator.h"
 #include <cmath>
 
-SygnalProstokatnyDekorator::SygnalProstokatnyDekorator(Generator& generator, double _amplituda, double _czestotliwosc, double _wypelnienie) 
-	: GeneratorDekorator(generator), amplituda(_amplituda), czestotliwosc(_czestotliwosc), wypelnienie(_wypelnienie), czas(0.0) 
+SygnalProstokatnyDekorator::SygnalProstokatnyDekorator(Generator& generator, double _amplituda, int _okres, double _wypelnienie)
+	: GeneratorDekorator(generator), amplituda(_amplituda), okres(_okres), wypelnienie(_wypelnienie) 
 { 
 }
 
 double SygnalProstokatnyDekorator::generuj() {
-    double base = dekorowanyGenerator.generuj();
+    double czas_w_okresie = std::fmod(krok, okres);
+    double wartosc = (czas_w_okresie < (okres * wypelnienie)) ? amplituda : 0.0;
+    krok++; 
 
-
-    double okres = 1.0 / czestotliwosc;
-    double czas_w_okresie = fmod(czas, okres);
-    double wartosc = (czas_w_okresie < okres * (wypelnienie / 100.0)) ? amplituda : 0;
-    czas += 0.01; // przyk³adowy krok czasu
-    return base + wartosc;
+    return wartosc + GeneratorDekorator::generuj();
 }
