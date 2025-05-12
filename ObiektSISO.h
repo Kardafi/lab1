@@ -12,6 +12,8 @@ class ObiektSISO
 public:
 	virtual ~ObiektSISO() = default;
 
+
+
     /// <summary>
     /// Metoda czysto wirtualna symuluj¹ca zachowanie obiektu SISO.
     /// Przyjmuje wartoœæ wejœciow¹ i zwraca odpowiadaj¹c¹ jej wartoœæ wyjœciow¹.

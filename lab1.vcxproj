@@ -131,10 +131,15 @@
     <ClCompile Include="Generator.cpp" />
     <ClCompile Include="GeneratorDekorator.cpp" />
     <ClCompile Include="GeneratorStala.cpp" />
+    <ClCompile Include="Komponent.cpp" />
+    <ClCompile Include="KompozytRownolegly.cpp" />
+    <ClCompile Include="KompozytSzeregowy.cpp" />
     <ClCompile Include="lab1.cpp" />
     <ClCompile Include="lab2.cpp" />
     <ClCompile Include="lab3.cpp" />
+    <ClCompile Include="lab4.cpp" />
     <ClCompile Include="ModelARX.cpp" />
+    <ClCompile Include="ModelARXKomponent.cpp" />
     <ClCompile Include="ObiektSISO.cpp" />
     <ClCompile Include="OgraniczenieAmplitudyDekorator.cpp" />
     <ClCompile Include="RegulatorPID.cpp" />
@@ -148,7 +153,11 @@
     <ClInclude Include="Generator.h" />
     <ClInclude Include="GeneratorDekorator.h" />
     <ClInclude Include="GeneratorStala.h" />
+    <ClInclude Include="Komponent.h" />
+    <ClInclude Include="KompozytRownolegly.h" />
+    <ClInclude Include="KompozytSzeregowy.h" />
     <ClInclude Include="ModelARX.h" />
+    <ClInclude Include="ModelARXKomponent.h" />
     <ClInclude Include="ObiektSISO.h" />
     <ClInclude Include="OgraniczenieAmplitudyDekorator.h" />
     <ClInclude Include="RegulatorPID.h" />

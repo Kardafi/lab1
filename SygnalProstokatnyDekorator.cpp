@@ -9,7 +9,7 @@ SygnalProstokatnyDekorator::SygnalProstokatnyDekorator(Generator& generator, dou
 double SygnalProstokatnyDekorator::generuj() {
     double czas_w_okresie = std::fmod(krok, okres);
     double wartosc = (czas_w_okresie < (okres * wypelnienie)) ? amplituda : 0.0;
-    krok++; 
+    krok= (krok +1 % okres); //todo czy tak moze byc?
 
     return wartosc + GeneratorDekorator::generuj();
 }

@@ -4,7 +4,7 @@
 #include <iomanip>
 #include "ModelARX.h"
 
-#define dasdas  // ustaw na MAIN aby skompilować program docelowy / ustaw na DEBUG aby skompilować program testujacy 
+#define aaasd  // ustaw na MAIN aby skompilować program docelowy / ustaw na DEBUG aby skompilować program testujacy 
 
 #ifdef DEBUG1
 
@@ -194,11 +194,22 @@ int main()
 
 int main()
 {
+
+	ModelARX arx1({ -0.4 }, { 0.6 }, 1, 0);
+
+	// Symulacja
+	double wejscie = 1.0;
+	for (int i = 0; i < 100; ++i) {
+		double wyjscie = arx1.symuluj(wejscie);
+		std::cout << "krok " << i << " -> wyjscie: " << wyjscie << std::endl;
+		wejscie = 0.0; // np. impuls jednostkowy tylko na początku
+	}
+
 	//Twój program
-	ModelARX instancjaTestowa({ -0.4,0.2 }, { 0.6, 0.3 }, 2, 0);
+	/*ModelARX instancjaTestowa({ -0.4,0.2 }, { 0.6, 0.3 }, 2, 0);
 	instancjaTestowa.ZapiszDoPlikuJSON("test_zapisu.txt");
 
-	ModelARX instancjaTestowa2("test_zapisu.txt");
+	ModelARX instancjaTestowa2("test_zapisu.txt");*/
 }
 
 #endif

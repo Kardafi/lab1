@@ -26,7 +26,7 @@ private:
     /// <summary>
     /// Licznik próbek (krok), który pozwala œledziæ pozycjê w okresie.
     /// </summary>
-    int krok = 0;
+    unsigned int krok = 0;
 
 public:
     /// <summary>

@@ -9,7 +9,7 @@
 #include "SygnalBialySzum.h"
 
 
-#define MAIN3
+#define dsadassss
 
 #ifdef MAIN3
 
