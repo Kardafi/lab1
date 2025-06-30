@@ -62,4 +62,7 @@ public:
 	/// <returns>Wygenerowana wartoœæ sygna³u wyjœciowego.</returns>
 	double symuluj(double wejscie) override;
 
+	void serialize(std::ofstream& out) const;
+
+	static std::shared_ptr<ModelARX> deserialize(std::istream& in);
 };

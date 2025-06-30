@@ -15,3 +15,14 @@ double SygnalSinusDekorator::generuj()
     n1 = xn;
     return xn + GeneratorDekorator::generuj();
 }
+
+void SygnalSinusDekorator::serialize(std::ofstream& out) const {
+    out << "{\n";
+    out << "  \"typ\": \"SygnalSinusoidalny\",\n";
+    out << "  \"dane\": {\n";
+    out << "    \"amplituda\": " << amplituda << ",\n";
+    out << "    \"czestotliwosc\": " << czestotliwosc << ",\n";
+    out << "    \"probkowanie\": " << probkowanie << "\n";
+    out << "  }\n";
+    out << "}\n";
+}

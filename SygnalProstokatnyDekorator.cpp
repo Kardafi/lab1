@@ -13,3 +13,14 @@ double SygnalProstokatnyDekorator::generuj() {
 
     return wartosc + GeneratorDekorator::generuj();
 }
+
+void SygnalProstokatnyDekorator::serialize(std::ofstream& out) const {
+    out << "{\n";
+    out << "  \"typ\": \"SygnalProstokatny\",\n";
+    out << "  \"dane\": {\n";
+    out << "    \"amplituda\": " << amplituda << ",\n";
+    out << "    \"okres\": " << okres << ",\n";
+    out << "    \"wypelnienie\": " << wypelnienie << "\n";
+    out << "  }\n";
+    out << "}\n";
+}

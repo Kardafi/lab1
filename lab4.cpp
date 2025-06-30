@@ -13,7 +13,7 @@
 #include "ModelARXKomponent.h"
 #include "ModelARX.h"
 
-#define MAIN4
+#define asddsd
 
 #ifdef MAIN4
 

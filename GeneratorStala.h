@@ -25,4 +25,6 @@ public:
     /// </summary>
     /// <returns>Sta³a wartoœæ typu double.</returns>
     double generuj() override;
+
+    void serialize(std::ofstream& out) const override;
 };

@@ -43,4 +43,6 @@ public:
     /// </summary>
     /// <returns>Wartoœæ próbki sygna³u prostok¹tnego.</returns>
     double generuj() override;
+
+    void serialize(std::ofstream& out) const;
 };

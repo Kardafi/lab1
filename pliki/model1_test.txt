@@ -1,0 +1,9 @@
+{
+  "typ": "ModelARX",
+  "dane": {
+    "A": [1, 0.5],
+    "B": [0, 1],
+    "opoznienie": 2,
+    "mocSzumu": 10
+  }
+}

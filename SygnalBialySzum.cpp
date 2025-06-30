@@ -10,3 +10,11 @@ double SygnalBialySzum::generuj()
 	return szum + GeneratorDekorator::generuj();
 }
 
+void SygnalBialySzum::serialize(std::ofstream& out) const {
+    out << "{\n";
+    out << "  \"typ\": \"SygnalBialySzum\",\n";
+    out << "  \"dane\": {\n";
+    out << "    \"amplituda\": " << amplituda << "\n";
+    out << "  }\n";
+    out << "}\n";
+}

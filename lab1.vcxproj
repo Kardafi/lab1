@@ -138,6 +138,7 @@
     <ClCompile Include="lab2.cpp" />
     <ClCompile Include="lab3.cpp" />
     <ClCompile Include="lab4.cpp" />
+    <ClCompile Include="labOstatni.cpp" />
     <ClCompile Include="ModelARX.cpp" />
     <ClCompile Include="ModelARXKomponent.cpp" />
     <ClCompile Include="ObiektSISO.cpp" />

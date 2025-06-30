@@ -1,5 +1,6 @@
 #include "RegulatorPID.h"
 
+
 RegulatorPID::RegulatorPID(double _k) : k(_k)
 {
 	Ti = 0;
@@ -65,6 +66,55 @@ void RegulatorPID::setTd(double _Td)
 	else
 		std::cerr << "Blad! Niepoprawna wartosc Td!";
 }
+
+void RegulatorPID::serialize(std::ostream& out) const {
+	out << "{\n";
+	out << "  \"typ\": \"RegulatorPID\",\n";
+	out << "  \"dane\": {\n";
+	out << "    \"k\": " << k << ",\n";
+	out << "    \"Ti\": " << Ti << ",\n";
+	out << "    \"Td\": " << Td << "\n";
+	out << "  }\n";
+	out << "}\n";
+}
+
+std::shared_ptr<RegulatorPID> RegulatorPID::deserialize(std::istream& in) {
+	double k = 0.0, Ti = 0.0, Td = 0.0;
+	std::string line;
+	bool inDane = false;
+
+	while (std::getline(in, line)) {
+		std::string clean = line;
+		clean.erase(std::remove_if(clean.begin(), clean.end(), ::isspace), clean.end());
+
+		if (clean.find("\"dane\":{") != std::string::npos)
+			inDane = true;
+
+		else if (inDane && clean.find("\"k\":") != std::string::npos) {
+			k = std::stod(line.substr(line.find(":") + 1));
+		}
+
+		else if (inDane && clean.find("\"Ti\":") != std::string::npos) {
+			Ti = std::stod(line.substr(line.find(":") + 1));
+		}
+
+		else if (inDane && clean.find("\"Td\":") != std::string::npos) {
+			Td = std::stod(line.substr(line.find(":") + 1));
+		}
+	}
+
+	if (Ti > 0 && Td > 0) {
+		return std::make_shared<RegulatorPID>(k, Ti, Td);
+	}
+	else if (Ti > 0) {
+		return std::make_shared<RegulatorPID>(k, Ti);
+	}
+	else {
+		return std::make_shared<RegulatorPID>(k);
+	}
+}
+
+
 
 int RegulatorPID::SprawdzNastawe(double _nastawa)
 {

@@ -36,4 +36,6 @@ public:
     /// </summary>
     /// <returns>Wartoœæ próbki z szumem.</returns>
     double generuj() override;
+
+    void serialize(std::ofstream& out) const;
 };

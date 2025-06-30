@@ -1,0 +1,8 @@
+{
+  "typ": "RegulatorPID",
+  "dane": {
+    "k": 0.5,
+    "Ti": 10,
+    "Td": 0.2
+  }
+}

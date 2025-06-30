@@ -117,3 +117,72 @@ double ModelARX::symuluj(double wejscie) {
 
     return wynik;
 }
+
+void ModelARX::serialize(std::ofstream& out) const {
+    out << "{\n";
+    out << "  \"typ\": \"ModelARX\",\n";
+    out << "  \"dane\": {\n";
+
+    out << "    \"A\": [";
+    for (size_t i = 0; i < A.size(); ++i) {
+        out << A[i];
+        if (i < A.size() - 1) out << ", ";
+    }
+    out << "],\n";
+
+    out << "    \"B\": [";
+    for (size_t i = 0; i < B.size(); ++i) {
+        out << B[i];
+        if (i < B.size() - 1) out << ", ";
+    }
+    out << "],\n";
+
+    out << "    \"opoznienie\": " << opoznienie << ",\n";
+    out << "    \"mocSzumu\": " << mocSzumu << "\n";
+
+    out << "  }\n";
+    out << "}\n";
+}
+
+std::shared_ptr<ModelARX> ModelARX::deserialize(std::istream& in) {
+    std::vector<double> A, B;
+    unsigned int opoznienie = 0;
+    double mocSzumu = 0.0;
+
+    std::string line;
+    bool inDane = false;
+
+    while (std::getline(in, line)) {
+        std::string clean = line;
+        clean.erase(std::remove_if(clean.begin(), clean.end(), ::isspace), clean.end());
+
+        if (clean.find("\"dane\":{") != std::string::npos)
+            inDane = true;
+
+        else if (inDane && clean.find("\"A\":[") != std::string::npos) {
+            auto start = line.find("[") + 1;
+            auto end = line.find("]");
+            std::stringstream ss(line.substr(start, end - start));
+            std::string val;
+            while (std::getline(ss, val, ',')) A.push_back(std::stod(val));
+        }
+
+        else if (inDane && clean.find("\"B\":[") != std::string::npos) {
+            auto start = line.find("[") + 1;
+            auto end = line.find("]");
+            std::stringstream ss(line.substr(start, end - start));
+            std::string val;
+            while (std::getline(ss, val, ',')) B.push_back(std::stod(val));
+        }
+
+        else if (inDane && clean.find("\"opoznienie\":") != std::string::npos) {
+            opoznienie = static_cast<unsigned int>(std::stoul(line.substr(line.find(":") + 1)));
+        }
+
+        else if (inDane && clean.find("\"mocSzumu\":") != std::string::npos) {
+            mocSzumu = std::stod(line.substr(line.find(":") + 1));
+        }
+    }
+
+    return std::make_shared<ModelARX>(A, B, opoznienie, mocSzumu);
+}

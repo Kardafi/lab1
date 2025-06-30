@@ -54,4 +54,6 @@ public:
     /// </summary>
     /// <returns>Wartoœæ próbki sygna³u sinusoidalnego.</returns>
     double generuj() override;
+
+    void serialize(std::ofstream& out) const;
 };

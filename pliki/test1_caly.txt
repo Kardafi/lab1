@@ -1,0 +1,41 @@
+{
+  "typ": "GeneratorStala",
+  "dane": {
+    "wartosc": 1.5
+  }
+}
+{
+  "typ": "SygnalSinusoidalny",
+  "dane": {
+    "amplituda": 2,
+    "czestotliwosc": 10,
+    "probkowanie": 100
+  }
+}
+{
+  "typ": "SygnalProstokatny",
+  "dane": {
+    "amplituda": 3,
+    "okres": 50,
+    "wypelnienie": 0.5
+  }
+}
+{
+  "typ": "SygnalTrojkatny",
+  "dane": {
+    "amplituda": 1.5,
+    "okres": 40
+  }
+}
+{
+  "typ": "SygnalBialySzum",
+  "dane": {
+    "amplituda": 0.2
+  }
+}
+{
+  "typ": "OgraniczenieAmplitudy",
+  "dane": {
+    "wartoscMaksymalna": 5
+  }
+}

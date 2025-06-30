@@ -1,4 +1,5 @@
 #pragma once
+#include <fstream>
 
 /// <summary>
 /// Abstrakcyjna klasa bazowa dla wszystkich generatorów sygna³ów.
@@ -17,4 +18,6 @@ public:
     /// </summary>
     /// <returns>Wygenerowana próbka jako liczba zmiennoprzecinkowa (double).</returns>
     virtual double generuj() = 0;
+
+    virtual void serialize(std::ofstream& out) const = 0;
 };

@@ -25,4 +25,7 @@ public:
     /// </summary>
     /// <returns>Wartoœæ próbki po ograniczeniu do maksimum.</returns>
     double generuj() override;
+
+    void serialize(std::ofstream& out) const;
+        
 };

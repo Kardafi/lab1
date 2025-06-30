@@ -21,3 +21,12 @@ double SygnalTrojkatnyDekorator::generuj()
 	return wynik + GeneratorDekorator::generuj();;
 }
 
+void SygnalTrojkatnyDekorator::serialize(std::ofstream& out) const {
+	out << "{\n";
+	out << "  \"typ\": \"SygnalTrojkatny\",\n";
+	out << "  \"dane\": {\n";
+	out << "    \"amplituda\": " << amplituda << ",\n";
+	out << "    \"okres\": " << okres << "\n";
+	out << "  }\n";
+	out << "}\n";
+}

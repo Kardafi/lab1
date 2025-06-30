@@ -3,6 +3,7 @@
 #include <vector>
 #include <deque>
 #include <iostream>
+#include <sstream>
 
 /// <summary>
 /// Klasa reprezentuj¹ca regulator PID (Proporcjonalno-Ca³kuj¹co-Ró¿niczkuj¹cy),
@@ -65,6 +66,11 @@ public:
     /// </summary>
 	/// param name="_Td">Nowy czas ró¿niczkowania.</param>
     void setTd(double _Td);
+
+    void serialize(std::ostream& out) const;
+
+    static std::shared_ptr<RegulatorPID> deserialize(std::istream& in);
+
 
 private:
     /// <summary>
