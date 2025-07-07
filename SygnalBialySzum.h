@@ -29,13 +29,17 @@ public:
     /// </summary>
     /// <param name="generator">Referencja do dekorowanego generatora.</param>
     /// <param name="_amplituda">Maksymalna amplituda szumu.</param>
-    SygnalBialySzum(Generator& generator, double _amplituda);
+    SygnalBialySzum(std::unique_ptr<Generator> _generator, double _amplituda);
 
     /// <summary>
     /// Generuje próbkê sygna³u z dodanym bia³ym szumem.
     /// </summary>
-    /// <returns>Wartoœæ próbki z szumem.</returns>
+    /// <returns>Wartoœæ próbki sygna³u z dodanym szumem (double).</returns>
     double generuj() override;
 
+    /// <summary>
+    /// Serializuje dekorator do pliku.
+    /// </summary>
+    /// <param name="out">Strumieñ wyjœciowy do zapisu danych.</param>
     void serialize(std::ofstream& out) const;
 };

@@ -1,6 +1,6 @@
 #include "SygnalBialySzum.h"
 
-SygnalBialySzum::SygnalBialySzum(Generator& generator, double _amplituda) : GeneratorDekorator(generator), amplituda(_amplituda), rozklad(-amplituda, amplituda)
+SygnalBialySzum::SygnalBialySzum(std::unique_ptr<Generator> _generator, double _amplituda) : GeneratorDekorator(std::move(_generator)), amplituda(_amplituda), rozklad(-amplituda, amplituda)
 {
 }
 
@@ -11,6 +11,7 @@ double SygnalBialySzum::generuj()
 }
 
 void SygnalBialySzum::serialize(std::ofstream& out) const {
+    dekorowanyGenerator->serialize(out);
     out << "{\n";
     out << "  \"typ\": \"SygnalBialySzum\",\n";
     out << "  \"dane\": {\n";

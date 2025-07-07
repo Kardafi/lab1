@@ -9,15 +9,15 @@ class GeneratorDekorator : public Generator
 {
 public:
     /// <summary>
-    /// Referencja do dekorowanego generatora.
+    /// WskaŸnik do dekorowanego generatora.
     /// </summary>
-    Generator& dekorowanyGenerator;
+    std::unique_ptr<Generator> dekorowanyGenerator;
 
     /// <summary>
     /// Konstruktor dekoratora generatora.
     /// </summary>
-    /// <param name="_generator">Referencja do generatora, który ma byæ dekorowany.</param>
-    GeneratorDekorator(Generator& _generator);
+    /// <param name="_generator">WskaŸnik do generatora, który ma byæ dekorowany.</param>
+    GeneratorDekorator(std::unique_ptr<Generator> _generator);
 
     /// <summary>
     /// Generuje próbkê sygna³u z rozszerzon¹ funkcjonalnoœci¹.

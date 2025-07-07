@@ -83,6 +83,8 @@ std::shared_ptr<RegulatorPID> RegulatorPID::deserialize(std::istream& in) {
 	std::string line;
 	bool inDane = false;
 
+	std::cout << "Wczytywanie regulatora PID z pliku...\n";
+
 	while (std::getline(in, line)) {
 		std::string clean = line;
 		clean.erase(std::remove_if(clean.begin(), clean.end(), ::isspace), clean.end());
@@ -92,14 +94,17 @@ std::shared_ptr<RegulatorPID> RegulatorPID::deserialize(std::istream& in) {
 
 		else if (inDane && clean.find("\"k\":") != std::string::npos) {
 			k = std::stod(line.substr(line.find(":") + 1));
+			std::cout << "Wczytano k: " << k << "\n";
 		}
 
 		else if (inDane && clean.find("\"Ti\":") != std::string::npos) {
 			Ti = std::stod(line.substr(line.find(":") + 1));
+			std::cout << "Wczytano Ti: " << Ti << "\n";
 		}
 
 		else if (inDane && clean.find("\"Td\":") != std::string::npos) {
 			Td = std::stod(line.substr(line.find(":") + 1));
+			std::cout << "Wczytano Td: " << Td << "\n";
 		}
 	}
 

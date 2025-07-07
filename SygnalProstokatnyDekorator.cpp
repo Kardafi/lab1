@@ -1,9 +1,8 @@
 #include "SygnalProstokatnyDekorator.h"
 #include <cmath>
 
-SygnalProstokatnyDekorator::SygnalProstokatnyDekorator(Generator& generator, double _amplituda, int _okres, double _wypelnienie)
-	: GeneratorDekorator(generator), amplituda(_amplituda), okres(_okres), wypelnienie(_wypelnienie) 
-{ 
+SygnalProstokatnyDekorator::SygnalProstokatnyDekorator(std::unique_ptr<Generator> _generator, double _amplituda, int _okres, double _wypelnienie) : GeneratorDekorator(std::move(_generator)), amplituda(_amplituda), okres(_okres), wypelnienie(_wypelnienie)
+{
 }
 
 double SygnalProstokatnyDekorator::generuj() {
@@ -15,6 +14,7 @@ double SygnalProstokatnyDekorator::generuj() {
 }
 
 void SygnalProstokatnyDekorator::serialize(std::ofstream& out) const {
+    dekorowanyGenerator->serialize(out);
     out << "{\n";
     out << "  \"typ\": \"SygnalProstokatny\",\n";
     out << "  \"dane\": {\n";

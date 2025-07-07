@@ -26,16 +26,20 @@ public:
     /// <summary>
     /// Konstruktor dekoratora generuj¹cego sygna³ trójk¹tny.
     /// </summary>
-    /// <param name="generator">Referencja do dekorowanego generatora.</param>
+    /// <param name="generator">Unikalny wskaŸnik do dekorowanego generatora.</param>
     /// <param name="_amplituda">Amplituda sygna³u trójk¹tnego.</param>
-    /// <param name="_okres">Okres sygna³u trójk¹tnego (liczba próbek).</param>
-    SygnalTrojkatnyDekorator(Generator& generator, double _amplituda, int _okres);
+    /// <param name="_okres">Okres sygna³u trójk¹tnego w liczbie próbek.</param>
+    SygnalTrojkatnyDekorator(std::unique_ptr<Generator> _generator, double _amplituda, int _okres);
 
     /// <summary>
-    /// Generuje próbkê sygna³u trójk¹tnego.
+    /// Generuje kolejn¹ próbkê sygna³u trójk¹tnego.
     /// </summary>
-    /// <returns>Wartoœæ próbki sygna³u trójk¹tnego.</returns>
+    /// <returns>Wartoœæ próbki sygna³u trójk¹tnego (double).</returns>
     double generuj() override;
 
+    /// <summary>
+    /// Serializuje dekorator do podanego strumienia wyjœciowego.
+    /// </summary>
+    /// <param name="out">Strumieñ wyjœciowy do zapisu.</param>
     void serialize(std::ofstream& out) const;
 };

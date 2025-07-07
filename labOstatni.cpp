@@ -2,6 +2,8 @@
 #include <fstream>
 #include "ModelARX.h"
 #include "RegulatorPID.h"
+#include <memory>
+
 
 #include "GeneratorStala.h"
 #include "SygnalSinusDekorator.h"
@@ -10,64 +12,67 @@
 #include "SygnalBialySzum.h"
 #include "OgraniczenieAmplitudyDekorator.h"
 
+#include  "PetlaSzeregowa.h"
+#include "PetlaRownolegla.h"
+
+#include "Interfejs.h"
+#include <iomanip>
+
 int main() {
 
-	//ModelARX model1({ 1.0, 0.5 }, { 0.0, 1.0 }, 2, 10);
-	//std::ofstream out("pliki/model1_test.txt");
-	//model1.serialize(out);
-	//out.close();
+#ifdef TEST_PETLI
 
-	//std::ifstream in("pliki/model1_test.txt");
-	//std::shared_ptr<ModelARX> arx1= ModelARX::deserialize(in);
-	//std::cout << "test";
 
-	////-----------------------
 
-	//RegulatorPID reg(0.5, 10.0, 0.2);
-	//std::ofstream out2("pliki/pid1_test.txt");
-	//reg.serialize(out2);
-	//out2.close();
+    std::vector<double> wspA = { -0.4, 0.2 };
+    std::vector<double> wspB = { 0.6, 0.3 };
+    int opoznienie = 0;
+    double mocZaklocenia = 0.0;
 
-	//std::ifstream in2("pliki/pid1_test.txt");
-	//std::shared_ptr<RegulatorPID> nowy = RegulatorPID::deserialize(in2);
-	//std::cout << "test2";
+    auto regulator = std::make_shared<RegulatorPID>(0.5, 10.0, 0.1);
+    auto model1 = std::make_shared<ModelARX>(wspA, wspB, opoznienie, mocZaklocenia);
+    auto model2 = std::make_shared<ModelARX>(wspA, wspB, opoznienie, mocZaklocenia);
+    auto model3 = std::make_shared<ModelARX>(wspA, wspB, opoznienie, mocZaklocenia);
 
-        // Utwórz podstawowy generator sta³ej
-    auto generatorStala = std::make_unique<GeneratorStala>(1.5);
+    // Kompozyt równoleg³y: ModelARX (model1) || ModelARX (model2)
+    auto rownolegleARX = std::make_shared<PetlaRownolegla>(trybPracyPetli::OTWARTA);
+    rownolegleARX->DodajSkladnik(model1);
+    rownolegleARX->DodajSkladnik(model2);
 
-    // Na³ó¿ dekoratory
-    auto* sinus = new SygnalSinusDekorator(*generatorStala, 2.0, 10.0, 100.0);
-    auto* prostokatny = new SygnalProstokatnyDekorator(*sinus, 3.0, 50, 0.5);
-    auto* trojkatny = new SygnalTrojkatnyDekorator(*prostokatny, 1.5, 40);
-    auto* szum = new SygnalBialySzum(*trojkatny, 0.2);
-    auto* ograniczony = new OgraniczenieAmplitudyDekorator(*szum, 5.0);
+    // Kompozyt szeregowy: RegulatorPID -> (ModelARX || ModelARX), zamkniêta pêtla
+    std::shared_ptr<PetlaUAR> szeregowa = std::make_shared<PetlaSzeregowa>(trybPracyPetli::ZAMKNIETA);
+    szeregowa->DodajSkladnik(regulator);
+    szeregowa->DodajSkladnik(rownolegleARX);
 
-    // Serializacja
-    std::ofstream out("pliki/test1_caly.txt");
-    if (!out.is_open()) {
-        std::cerr << "Nie mo¿na otworzyæ pliku do zapisu.\n";
-        return 1;
+    // Dodajemy model3 szeregowo na koñcu
+    szeregowa->DodajSkladnik(model3);
+
+    // Tworzenie zagnie¿d¿onych dekoratorów sygna³u
+    std::unique_ptr<Generator> sygnal = std::make_unique<SygnalTrojkatnyDekorator>(std::make_unique<GeneratorStala>(5.0), 3.0, 15);
+
+    std::vector<double> wejscie(200, 0.0);
+    for (size_t k = 0; k < wejscie.size(); ++k) {
+        wejscie[k] = sygnal->generuj();
     }
 
-    //out << "[\n";
-    generatorStala->serialize(out);// out << ",\n";
-    sinus->serialize(out);         // out << ",\n";
-    prostokatny->serialize(out);   // out << ",\n";
-    trojkatny->serialize(out);    //  out << ",\n";
-    szum->serialize(out);         //  out << ",\n";
-    ograniczony->serialize(out);//out << "\n";
-    //out << "]\n";
+    // Symulacja z model3
+    std::vector<double> wyjscie_z_model3(200, 0.0);
+    std::cout << "\nSymulacja z dodatkowym modelem szeregowo:\n";
+    std::cout << std::setw(4) << "krok"
+        << std::setw(10) << "zadana"
+        << std::setw(15) << "wyjscie+model3" << std::endl;
+    for (size_t k = 0; k < wejscie.size(); ++k) {
+        wyjscie_z_model3[k] = szeregowa->symuluj(wejscie[k]);
+        std::cout << std::setw(4) << k
+            << std::setw(10) << wejscie[k]
+            << std::setw(15) << wyjscie_z_model3[k] << std::endl;
+    }
 
-    out.close();
+#endif // TEST_PETLI
 
-    std::cout << "Zserializowano sygna³ do pliku 'sygnal.json'.\n";
 
-    // Sprz¹tanie (bo dekoratory by³y tworzone dynamicznie)
-    delete ograniczony;
-    delete szum;
-    delete trojkatny;
-    delete prostokatny;
-    delete sinus;
+    Interfejs userInterfejs;
+    userInterfejs.InterfejsStart();
 
     return 0;
 }

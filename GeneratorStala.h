@@ -26,5 +26,20 @@ public:
     /// <returns>Sta³a wartoœæ typu double.</returns>
     double generuj() override;
 
+    /// <summary>
+    /// Serializuje konfiguracjê generatora do strumienia wyjœciowego.
+    /// </summary>
+    /// <param name="out">Referencja do otwartego strumienia wyjœciowego (np. plikowego).</param>
+    /// <remarks>
+    /// Dane zapisywane s¹ w pseudo formacie JSON np:
+    /// <code>
+    /// {
+    ///   "typ": "GeneratorStala",
+    ///   "dane": {
+    ///     "wartosc": 2.2
+    ///   }
+    /// }
+    /// </code>
+    /// </remarks>
     void serialize(std::ofstream& out) const override;
 };

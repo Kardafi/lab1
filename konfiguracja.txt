@@ -1,0 +1,58 @@
+{
+  "typ": "GeneratorStala",
+  "dane": {
+    "wartosc": 2.2
+  }
+}
+{
+  "typ": "SygnalBialySzum",
+  "dane": {
+    "amplituda": 4.21
+  }
+}
+{
+  "typ": "SygnalProstokatny",
+  "dane": {
+    "amplituda": 5.5,
+    "okres": 8,
+    "wypelnienie": 0.5
+  }
+}
+{
+  "typ": "SygnalSinusoidalny",
+  "dane": {
+    "amplituda": 3,
+    "czestotliwosc": 4,
+    "probkowanie": 8
+  }
+}
+{
+  "typ": "SygnalTrojkatny",
+  "dane": {
+    "amplituda": 7,
+    "okres": 4
+  }
+}
+{
+  "typ": "OgraniczenieAmplitudy",
+  "dane": {
+    "wartoscMaksymalna": 10
+  }
+}
+{
+  "typ": "ModelARX",
+  "dane": {
+    "A": [-0.4, 0.2],
+    "B": [0.6, 0.3],
+    "opoznienie": 2,
+    "mocSzumu": 0
+  }
+}
+{
+  "typ": "RegulatorPID",
+  "dane": {
+    "k": 0.5,
+    "Ti": 10,
+    "Td": 0.2
+  }
+}

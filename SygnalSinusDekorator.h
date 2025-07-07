@@ -15,27 +15,27 @@ class SygnalSinusDekorator : public GeneratorDekorator
     double amplituda;
 
     /// <summary>
-    /// Czêstotliwoœæ sygna³u sinusoidalnego.
+    /// Czêstotliwoœæ sygna³u sinusoidalnego (Hz).
     /// </summary>
     double czestotliwosc;
 
     /// <summary>
-    /// Czêstotliwoœæ k¹ta omega.
+    /// Czêstotliwoœæ k¹towa omega (rad/s).
     /// </summary>
     double omega;
 
     /// <summary>
-    /// Czêstotliwoœæ próbkowania.
+    /// Czêstotliwoœæ próbkowania (Hz).
     /// </summary>
     double probkowanie;
 
     /// <summary>
-    /// Zmienna pomocnicza przechowuj¹ca wartoœæ n-1.
+    /// Poprzednia wartoœæ próbki (n-1).
     /// </summary>
     double n1 = 0; // n-1
 
     /// <summary>
-    /// Zmienna pomocnicza przechowuj¹ca wartoœæ n-2.
+    /// Wartoœæ próbki sprzed dwóch kroków (n-2).
     /// </summary>
     double n2 = 0; // n-2
 
@@ -45,15 +45,19 @@ public:
     /// </summary>
     /// <param name="generator">Referencja do dekorowanego generatora.</param>
     /// <param name="_amplituda">Amplituda sygna³u sinusoidalnego.</param>
-    /// <param name="_czestotliwosc">Czêstotliwoœæ sygna³u sinusoidalnego (w Hz).</param>
-    /// <param name="_probkowanie">Czêstotliwoœæ próbkowania (w Hz).</param>
-    SygnalSinusDekorator(Generator& generator, double _amplituda, double _czestotliwosc, double _probkowanie);
+    /// <param name="_czestotliwosc">Czêstotliwoœæ sygna³u sinusoidalnego (Hz).</param>
+    /// <param name="_probkowanie">Czêstotliwoœæ próbkowania (Hz).</param>
+    SygnalSinusDekorator(std::unique_ptr<Generator> _generator, double _amplituda, double _czestotliwosc, double _probkowanie);
 
     /// <summary>
     /// Generuje kolejn¹ próbkê sygna³u sinusoidalnego.
     /// </summary>
-    /// <returns>Wartoœæ próbki sygna³u sinusoidalnego.</returns>
+    /// <returns>Wartoœæ próbki sygna³u sinusoidalnego (double).</returns>
     double generuj() override;
 
+    /// <summary>
+    /// Serializuje dekorator do strumienia wyjœciowego.
+    /// </summary>
+    /// <param name="out">Strumieñ wyjœciowy do zapisu.</param>
     void serialize(std::ofstream& out) const;
 };

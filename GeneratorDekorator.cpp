@@ -1,12 +1,10 @@
 #include "GeneratorDekorator.h"
 
-GeneratorDekorator::GeneratorDekorator(Generator& _generator)
-	: dekorowanyGenerator(_generator)
-{
+GeneratorDekorator::GeneratorDekorator(std::unique_ptr<Generator> _generator) : dekorowanyGenerator(std::move(_generator)) {
 }
 
 double GeneratorDekorator::generuj()
 {
-	return dekorowanyGenerator.generuj();
+	return dekorowanyGenerator->generuj();
 }
 

@@ -152,6 +152,8 @@ std::shared_ptr<ModelARX> ModelARX::deserialize(std::istream& in) {
     std::string line;
     bool inDane = false;
 
+	std::cout << "Wczytywanie modelu ARX z pliku...\n";
+
     while (std::getline(in, line)) {
         std::string clean = line;
         clean.erase(std::remove_if(clean.begin(), clean.end(), ::isspace), clean.end());
@@ -165,6 +167,9 @@ std::shared_ptr<ModelARX> ModelARX::deserialize(std::istream& in) {
             std::stringstream ss(line.substr(start, end - start));
             std::string val;
             while (std::getline(ss, val, ',')) A.push_back(std::stod(val));
+            std::cout << "Wczytano wektor A: ";
+            for (const auto& a : A) std::cout << a << " ";
+            std::cout << "\n";
         }
 
         else if (inDane && clean.find("\"B\":[") != std::string::npos) {
@@ -173,14 +178,19 @@ std::shared_ptr<ModelARX> ModelARX::deserialize(std::istream& in) {
             std::stringstream ss(line.substr(start, end - start));
             std::string val;
             while (std::getline(ss, val, ',')) B.push_back(std::stod(val));
+            std::cout << "Wczytano wektor B: ";
+            for (const auto& b : B) std::cout << b << " ";
+            std::cout << "\n";
         }
 
         else if (inDane && clean.find("\"opoznienie\":") != std::string::npos) {
             opoznienie = static_cast<unsigned int>(std::stoul(line.substr(line.find(":") + 1)));
+            std::cout << "Wczytano opoznienie: " << opoznienie << "\n";
         }
 
         else if (inDane && clean.find("\"mocSzumu\":") != std::string::npos) {
             mocSzumu = std::stod(line.substr(line.find(":") + 1));
+            std::cout << "Wczytano moc szumu: " << mocSzumu << "\n";
         }
     }
 

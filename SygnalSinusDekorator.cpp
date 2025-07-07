@@ -1,14 +1,14 @@
 #include "SygnalSinusDekorator.h"
 #include <cmath>
 
-SygnalSinusDekorator::SygnalSinusDekorator(Generator& generator, double _amplituda, double _czestotliwosc, double _probkowanie) : GeneratorDekorator(generator), amplituda(_amplituda), czestotliwosc(_czestotliwosc), probkowanie(_probkowanie)
+SygnalSinusDekorator::SygnalSinusDekorator(std::unique_ptr<Generator> _generator, double _amplituda, double _czestotliwosc, double _probkowanie) : GeneratorDekorator(std::move(_generator)), amplituda(_amplituda), czestotliwosc(_czestotliwosc), probkowanie(_probkowanie)
 {
-    omega = 2.0 * M_PI * czestotliwosc;
-    n1 = _amplituda*sin(omega);     
-    n2 = 0;
+	omega = 2.0 * M_PI * czestotliwosc / probkowanie;
+	n1 = _amplituda * sin(omega);
+	n2 = 0;
 }
 
-double SygnalSinusDekorator::generuj() 
+double SygnalSinusDekorator::generuj()
 {
     double xn = 2 * cos(omega) * n1 - n2;
     n2 = n1;
@@ -17,6 +17,7 @@ double SygnalSinusDekorator::generuj()
 }
 
 void SygnalSinusDekorator::serialize(std::ofstream& out) const {
+    dekorowanyGenerator->serialize(out);
     out << "{\n";
     out << "  \"typ\": \"SygnalSinusoidalny\",\n";
     out << "  \"dane\": {\n";

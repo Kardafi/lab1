@@ -1,6 +1,6 @@
 #include "SygnalTrojkatnyDekorator.h"
 
-SygnalTrojkatnyDekorator::SygnalTrojkatnyDekorator(Generator& generator, double _amplituda, int _okres) : GeneratorDekorator(generator), amplituda(_amplituda), okres(_okres), krok(0)
+SygnalTrojkatnyDekorator::SygnalTrojkatnyDekorator(std::unique_ptr<Generator> _generator, double _amplituda, int _okres) :GeneratorDekorator(std::move(_generator)), amplituda(_amplituda), okres(_okres), krok(0)
 {
 }
 
@@ -22,6 +22,7 @@ double SygnalTrojkatnyDekorator::generuj()
 }
 
 void SygnalTrojkatnyDekorator::serialize(std::ofstream& out) const {
+	dekorowanyGenerator->serialize(out);
 	out << "{\n";
 	out << "  \"typ\": \"SygnalTrojkatny\",\n";
 	out << "  \"dane\": {\n";

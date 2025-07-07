@@ -19,7 +19,6 @@
 
 int main() {
 
-	//todo POZBYC SIE ModelARXKompoment!!!!!!!!!!!!!!pominac t¹ klase
         // Tworzenie dwóch modeli ARX jako liœci
         ModelARX arx1({ -0.4 }, { 0.6 }, 1, 0);
         ModelARX arx2({ -0.4 }, { 0.6 }, 1, 0);

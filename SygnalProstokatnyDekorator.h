@@ -36,13 +36,17 @@ public:
     /// <param name="_amplituda">Amplituda sygna³u prostok¹tnego.</param>
     /// <param name="_okres">Okres sygna³u prostok¹tnego (liczba próbek).</param>
     /// <param name="_wypelnienie">Wype³nienie sygna³u prostok¹tnego (0-100%).</param>
-    SygnalProstokatnyDekorator(Generator& generator, double _amplituda, int _okres, double _wypelnienie);
+    SygnalProstokatnyDekorator(std::unique_ptr<Generator> _generator, double _amplituda, int _okres, double _wypelnienie);
 
     /// <summary>
     /// Generuje próbkê sygna³u prostok¹tnego.
     /// </summary>
-    /// <returns>Wartoœæ próbki sygna³u prostok¹tnego.</returns>
+    /// <returns>Wartoœæ próbki sygna³u prostok¹tnego (double).</returns>
     double generuj() override;
 
+    /// <summary>
+    /// Serializuje dekorator do pliku.
+    /// </summary>
+    /// <param name="out">Strumieñ wyjœciowy do zapisu danych.</param>
     void serialize(std::ofstream& out) const;
 };
