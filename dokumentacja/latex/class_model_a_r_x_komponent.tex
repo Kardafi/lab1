@@ -1,0 +1,91 @@
+\doxysection{Model\+ARXKomponent Class Reference}
+\hypertarget{class_model_a_r_x_komponent}{}\label{class_model_a_r_x_komponent}\index{ModelARXKomponent@{ModelARXKomponent}}
+
+
+\doxylink{class_komponent}{Komponent} opakowuj¹cy model ARX, zgodny z interfejsem {\ttfamily \doxylink{class_komponent}{Komponent}}. Umo¿liwia wykorzystanie modelu ARX w strukturze kompozytowej (Composite).  
+
+
+
+
+{\ttfamily \#include $<$Model\+ARXKomponent.\+h$>$}
+
+Inheritance diagram for Model\+ARXKomponent\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_model_a_r_x_komponent}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_model_a_r_x_komponent_a05df9048ac5d1e89525693d1604aca73}{Model\+ARXKomponent}} (const \mbox{\hyperlink{class_model_a_r_x}{Model\+ARX}} \&model)
+\begin{DoxyCompactList}\small\item\em Tworzy komponent ARX na podstawie przekazanego modelu. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_model_a_r_x_komponent_a10fac3dd0f09bff6edaa204458824ec2}{symuluj}} (double wejscie) override
+\begin{DoxyCompactList}\small\item\em Symuluje dzia³anie komponentu, wykorzystuj¹c opakowany model ARX. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_komponent}{Komponent}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{class_komponent_acd984011b0d89fdb1ccf0f5f806c722e}{dodaj}} (\mbox{\hyperlink{class_komponent}{Komponent}} \texorpdfstring{$\ast$}{*}komponent)
+\begin{DoxyCompactList}\small\item\em Dodaje komponent podrzêdny do bie¿¹cego komponentu. Domyœlnie nie robi nic — powinno byæ nadpisane w klasach z³o¿onych. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_komponent_a73f159429912cac0fa79bd0d7481b8d3}{usun}} (\mbox{\hyperlink{class_komponent}{Komponent}} \texorpdfstring{$\ast$}{*}komponent)
+\begin{DoxyCompactList}\small\item\em Usuwa komponent podrzêdny z bie¿¹cego komponentu. Domyœlnie nie robi nic — powinno byæ nadpisane w klasach z³o¿onych. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{class_komponent}{Komponent}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_komponent_a550ca64fa8777206a59ce1c7a5ba8d63}{get\+Child}} (int n)
+\begin{DoxyCompactList}\small\item\em Zwraca wskaŸnik do podrzêdnego komponentu o podanym indeksie. Domyœlnie zwraca {\ttfamily nullptr} — powinno byæ nadpisane w klasach z³o¿onych. \end{DoxyCompactList}\item 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Komponent} ()=default
+\begin{DoxyCompactList}\small\item\em Wirtualny destruktor klasy {\ttfamily \doxylink{class_komponent}{Komponent}}. Umo¿liwia bezpieczne usuwanie obiektów dziedzicz¹cych przez wskaŸnik do klasy bazowej. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\doxylink{class_komponent}{Komponent} opakowuj¹cy model ARX, zgodny z interfejsem {\ttfamily \doxylink{class_komponent}{Komponent}}. Umo¿liwia wykorzystanie modelu ARX w strukturze kompozytowej (Composite). 
+
+\label{doc-constructors}
+\Hypertarget{class_model_a_r_x_komponent_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_model_a_r_x_komponent_a05df9048ac5d1e89525693d1604aca73}\index{ModelARXKomponent@{ModelARXKomponent}!ModelARXKomponent@{ModelARXKomponent}}
+\index{ModelARXKomponent@{ModelARXKomponent}!ModelARXKomponent@{ModelARXKomponent}}
+\doxysubsubsection{\texorpdfstring{ModelARXKomponent()}{ModelARXKomponent()}}
+{\footnotesize\ttfamily \label{class_model_a_r_x_komponent_a05df9048ac5d1e89525693d1604aca73} 
+Model\+ARXKomponent\+::\+Model\+ARXKomponent (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_model_a_r_x}{Model\+ARX}} \&}]{model}{}\end{DoxyParamCaption})}
+
+
+
+Tworzy komponent ARX na podstawie przekazanego modelu. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em model} & Model ARX, który ma zostaæ opakowany w komponent.\\
+\hline
+\end{DoxyParams}
+
+
+\label{doc-func-members}
+\Hypertarget{class_model_a_r_x_komponent_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_model_a_r_x_komponent_a10fac3dd0f09bff6edaa204458824ec2}\index{ModelARXKomponent@{ModelARXKomponent}!symuluj@{symuluj}}
+\index{symuluj@{symuluj}!ModelARXKomponent@{ModelARXKomponent}}
+\doxysubsubsection{\texorpdfstring{symuluj()}{symuluj()}}
+{\footnotesize\ttfamily \label{class_model_a_r_x_komponent_a10fac3dd0f09bff6edaa204458824ec2} 
+double Model\+ARXKomponent\+::symuluj (\begin{DoxyParamCaption}\item[{double}]{wejscie}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Symuluje dzia³anie komponentu, wykorzystuj¹c opakowany model ARX. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em wejscie} & Wartoœæ wejœciowa sygna³u.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Wartoœæ wyjœciowa po przetworzeniu przez model ARX.
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_komponent_ac1e791f7c8f1e9b204ff1de949e76cd3}{Komponent}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Model\+ARXKomponent.\+h\item 
+Model\+ARXKomponent.\+cpp\end{DoxyCompactItemize}

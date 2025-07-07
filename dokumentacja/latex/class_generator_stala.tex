@@ -1,0 +1,113 @@
+\doxysection{Generator\+Stala Class Reference}
+\hypertarget{class_generator_stala}{}\label{class_generator_stala}\index{GeneratorStala@{GeneratorStala}}
+
+
+\doxylink{class_generator}{Generator} sta³ej wartoœci. Zwraca tê sam¹ wartoœæ przy ka¿dym wywo³aniu metody \doxylink{class_generator_stala_aec037b76f0c62471be04a818eddc3160}{generuj()}.  
+
+
+
+
+{\ttfamily \#include $<$Generator\+Stala.\+h$>$}
+
+Inheritance diagram for Generator\+Stala\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_generator_stala}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_generator_stala_a691df715295e0b8067072a46a884eb03}{Generator\+Stala}} (double \+\_\+wartosc=0)
+\begin{DoxyCompactList}\small\item\em Konstruktor generatora sta³ej wartoœci. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_generator_stala_aec037b76f0c62471be04a818eddc3160}{generuj}} () override
+\begin{DoxyCompactList}\small\item\em Zwraca sta³¹ wartoœæ ustawion¹ w konstruktorze. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_generator_stala_ac8f97e4df1ae70898a10345793f6d9ea}{serialize}} (std\+::ofstream \&out) const override
+\begin{DoxyCompactList}\small\item\em Serializuje konfiguracjê generatora do strumienia wyjœciowego. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_generator}{Generator}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Generator} ()=default
+\begin{DoxyCompactList}\small\item\em Wirtualny destruktor klasy \doxylink{class_generator}{Generator}. Umo¿liwia bezpieczne usuwanie obiektów pochodnych przez wskaŸnik do klasy bazowej. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\doxylink{class_generator}{Generator} sta³ej wartoœci. Zwraca tê sam¹ wartoœæ przy ka¿dym wywo³aniu metody \doxylink{class_generator_stala_aec037b76f0c62471be04a818eddc3160}{generuj()}. 
+
+\label{doc-constructors}
+\Hypertarget{class_generator_stala_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_generator_stala_a691df715295e0b8067072a46a884eb03}\index{GeneratorStala@{GeneratorStala}!GeneratorStala@{GeneratorStala}}
+\index{GeneratorStala@{GeneratorStala}!GeneratorStala@{GeneratorStala}}
+\doxysubsubsection{\texorpdfstring{GeneratorStala()}{GeneratorStala()}}
+{\footnotesize\ttfamily \label{class_generator_stala_a691df715295e0b8067072a46a884eb03} 
+Generator\+Stala\+::\+Generator\+Stala (\begin{DoxyParamCaption}\item[{double}]{\+\_\+wartosc}{ = {\ttfamily 0}}\end{DoxyParamCaption})}
+
+
+
+Konstruktor generatora sta³ej wartoœci. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+wartosc} & Wartoœæ, która bêdzie zwracana przy ka¿dym wywo³aniu. Domyœlnie 0.\\
+\hline
+\end{DoxyParams}
+
+
+\label{doc-func-members}
+\Hypertarget{class_generator_stala_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_generator_stala_aec037b76f0c62471be04a818eddc3160}\index{GeneratorStala@{GeneratorStala}!generuj@{generuj}}
+\index{generuj@{generuj}!GeneratorStala@{GeneratorStala}}
+\doxysubsubsection{\texorpdfstring{generuj()}{generuj()}}
+{\footnotesize\ttfamily \label{class_generator_stala_aec037b76f0c62471be04a818eddc3160} 
+double Generator\+Stala\+::generuj (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Zwraca sta³¹ wartoœæ ustawion¹ w konstruktorze. 
+
+\begin{DoxyReturn}{Returns}
+Sta³a wartoœæ typu double.
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_generator_ae5497fda9b218ca286bae310ae08b991}{Generator}}.
+
+\Hypertarget{class_generator_stala_ac8f97e4df1ae70898a10345793f6d9ea}\index{GeneratorStala@{GeneratorStala}!serialize@{serialize}}
+\index{serialize@{serialize}!GeneratorStala@{GeneratorStala}}
+\doxysubsubsection{\texorpdfstring{serialize()}{serialize()}}
+{\footnotesize\ttfamily \label{class_generator_stala_ac8f97e4df1ae70898a10345793f6d9ea} 
+void Generator\+Stala\+::serialize (\begin{DoxyParamCaption}\item[{std\+::ofstream \&}]{out}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Serializuje konfiguracjê generatora do strumienia wyjœciowego. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em out} & Referencja do otwartego strumienia wyjœciowego (np. plikowego).\\
+\hline
+\end{DoxyParams}
+
+
+Dane zapisywane s¹ w pseudo formacie JSON np\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{\ \ \textcolor{stringliteral}{"{}typ"{}}:\ \textcolor{stringliteral}{"{}GeneratorStala"{}},}
+\DoxyCodeLine{\ \ \textcolor{stringliteral}{"{}dane"{}}:\ \{}
+\DoxyCodeLine{\ \ \ \ \textcolor{stringliteral}{"{}wartosc"{}}:\ 2.2}
+\DoxyCodeLine{\ \ \}}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+ 
+
+Implements \mbox{\hyperlink{class_generator_acd60bdcd7d894f2fe86d42fb759e3151}{Generator}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Generator\+Stala.\+h\item 
+Generator\+Stala.\+cpp\end{DoxyCompactItemize}

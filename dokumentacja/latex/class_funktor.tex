@@ -1,0 +1,62 @@
+\doxysection{Funktor Class Reference}
+\hypertarget{class_funktor}{}\label{class_funktor}\index{Funktor@{Funktor}}
+
+
+Klasa funktor, symuluj¹ca jeden krok dzia³ania pêtli sprê¿enia zwrotnego.  
+
+
+
+
+{\ttfamily \#include $<$Funktor.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_funktor_a644285175434352d627f80682f3caae5}\label{class_funktor_a644285175434352d627f80682f3caae5} 
+{\bfseries Funktor} ()
+\begin{DoxyCompactList}\small\item\em Domyœlny konstruktor klasy \doxylink{class_funktor}{Funktor}. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_funktor_a9d9b6037f3f6ff2d16e2cf948a055be2}{operator()}} (\mbox{\hyperlink{class_model_a_r_x}{Model\+ARX}} \&\+\_\+model\+ARX, \mbox{\hyperlink{class_regulator_p_i_d}{Regulator\+PID}} \&\+\_\+regulator\+PID, double \+\_\+wartosc\+Zadana)
+\begin{DoxyCompactList}\small\item\em Przeci¹¿ony operator wywo³ania funkcji. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Klasa funktor, symuluj¹ca jeden krok dzia³ania pêtli sprê¿enia zwrotnego. 
+
+\label{doc-func-members}
+\Hypertarget{class_funktor_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_funktor_a9d9b6037f3f6ff2d16e2cf948a055be2}\index{Funktor@{Funktor}!operator()@{operator()}}
+\index{operator()@{operator()}!Funktor@{Funktor}}
+\doxysubsubsection{\texorpdfstring{operator()()}{operator()()}}
+{\footnotesize\ttfamily \label{class_funktor_a9d9b6037f3f6ff2d16e2cf948a055be2} 
+double Funktor\+::operator() (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_model_a_r_x}{Model\+ARX}} \&}]{\+\_\+model\+ARX}{, }\item[{\mbox{\hyperlink{class_regulator_p_i_d}{Regulator\+PID}} \&}]{\+\_\+regulator\+PID}{, }\item[{double}]{\+\_\+wartosc\+Zadana}{}\end{DoxyParamCaption})}
+
+
+
+Przeci¹¿ony operator wywo³ania funkcji. 
+
+Symuluje pojedynczy krok pêtli regulacji sprê¿enia zwrotnego\+:
+\begin{DoxyItemize}
+\item Regulator PID przetwarza uchyb na sygna³ steruj¹cy.
+\item Model ARX symuluje odpowiedŸ obiektu na sygna³ steruj¹cy.
+\item Operator zwraca now¹ wartoœæ wyjœciow¹.
+\end{DoxyItemize}
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+model\+ARX} & Obiekt modelu procesu (obiekt ARX).\\
+\hline
+{\em \+\_\+regulator\+PID} & Obiekt regulatora PID.\\
+\hline
+{\em \+\_\+\+Wartosc\+Zadana} & Wartoœæ zadana (punkt odniesienia) dla systemu.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Wartoœæ wyjœciowa modelu po kroku symulacji.
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Funktor.\+h\item 
+Funktor.\+cpp\end{DoxyCompactItemize}

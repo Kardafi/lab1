@@ -1,0 +1,114 @@
+\doxysection{Ograniczenie\+Amplitudy\+Dekorator Class Reference}
+\hypertarget{class_ograniczenie_amplitudy_dekorator}{}\label{class_ograniczenie_amplitudy_dekorator}\index{OgraniczenieAmplitudyDekorator@{OgraniczenieAmplitudyDekorator}}
+
+
+Dekorator ograniczaj¹cy amplitudê sygna³u. Obcina wartoœci generowane przez dekorowany generator do zadanego maksimum.  
+
+
+
+
+{\ttfamily \#include $<$Ograniczenie\+Amplitudy\+Dekorator.\+h$>$}
+
+Inheritance diagram for Ograniczenie\+Amplitudy\+Dekorator\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_ograniczenie_amplitudy_dekorator}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_ograniczenie_amplitudy_dekorator_ad76feb661433b5312137b8e7a83fb3ad}{Ograniczenie\+Amplitudy\+Dekorator}} (std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_generator}{Generator}} $>$ \+\_\+generator, double \+\_\+wartosc\+Maksymalna)
+\begin{DoxyCompactList}\small\item\em Konstruktor dekoratora ograniczaj¹cego amplitudê. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_ograniczenie_amplitudy_dekorator_af2c33c11ce9dfdfcbac16a6254fd5f2f}{generuj}} () override
+\begin{DoxyCompactList}\small\item\em Generuje próbkê sygna³u z ograniczon¹ amplitud¹. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_ograniczenie_amplitudy_dekorator_a0b61048fdad93318fda75963dd245203}{serialize}} (std\+::ofstream \&out) const override
+\begin{DoxyCompactList}\small\item\em Zapisuje konfiguracjê dekoratora do pliku wyjœciowego. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_generator_dekorator}{Generator\+Dekorator}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_generator_dekorator_a80a92c50f632375b3f4cf504af62616f}{Generator\+Dekorator}} (std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_generator}{Generator}} $>$ \+\_\+generator)
+\begin{DoxyCompactList}\small\item\em Konstruktor dekoratora generatora. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_generator}{Generator}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Generator} ()=default
+\begin{DoxyCompactList}\small\item\em Wirtualny destruktor klasy \doxylink{class_generator}{Generator}. Umo¿liwia bezpieczne usuwanie obiektów pochodnych przez wskaŸnik do klasy bazowej. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Public Attributes inherited from \mbox{\hyperlink{class_generator_dekorator}{Generator\+Dekorator}}}
+\begin{DoxyCompactItemize}
+\item 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_generator}{Generator}} $>$ {\bfseries dekorowany\+Generator}
+\begin{DoxyCompactList}\small\item\em WskaŸnik do dekorowanego generatora. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Dekorator ograniczaj¹cy amplitudê sygna³u. Obcina wartoœci generowane przez dekorowany generator do zadanego maksimum. 
+
+\label{doc-constructors}
+\Hypertarget{class_ograniczenie_amplitudy_dekorator_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_ograniczenie_amplitudy_dekorator_ad76feb661433b5312137b8e7a83fb3ad}\index{OgraniczenieAmplitudyDekorator@{OgraniczenieAmplitudyDekorator}!OgraniczenieAmplitudyDekorator@{OgraniczenieAmplitudyDekorator}}
+\index{OgraniczenieAmplitudyDekorator@{OgraniczenieAmplitudyDekorator}!OgraniczenieAmplitudyDekorator@{OgraniczenieAmplitudyDekorator}}
+\doxysubsubsection{\texorpdfstring{OgraniczenieAmplitudyDekorator()}{OgraniczenieAmplitudyDekorator()}}
+{\footnotesize\ttfamily \label{class_ograniczenie_amplitudy_dekorator_ad76feb661433b5312137b8e7a83fb3ad} 
+Ograniczenie\+Amplitudy\+Dekorator\+::\+Ograniczenie\+Amplitudy\+Dekorator (\begin{DoxyParamCaption}\item[{std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_generator}{Generator}} $>$}]{\+\_\+generator}{, }\item[{double}]{\+\_\+wartosc\+Maksymalna}{}\end{DoxyParamCaption})}
+
+
+
+Konstruktor dekoratora ograniczaj¹cego amplitudê. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+generator} & WskaŸnik do dekorowanego generatora sygna³u.\\
+\hline
+{\em \+\_\+wartosc\+Maksymalna} & Wartoœæ, do której ograniczana jest amplituda.\\
+\hline
+\end{DoxyParams}
+
+
+\label{doc-func-members}
+\Hypertarget{class_ograniczenie_amplitudy_dekorator_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_ograniczenie_amplitudy_dekorator_af2c33c11ce9dfdfcbac16a6254fd5f2f}\index{OgraniczenieAmplitudyDekorator@{OgraniczenieAmplitudyDekorator}!generuj@{generuj}}
+\index{generuj@{generuj}!OgraniczenieAmplitudyDekorator@{OgraniczenieAmplitudyDekorator}}
+\doxysubsubsection{\texorpdfstring{generuj()}{generuj()}}
+{\footnotesize\ttfamily \label{class_ograniczenie_amplitudy_dekorator_af2c33c11ce9dfdfcbac16a6254fd5f2f} 
+double Ograniczenie\+Amplitudy\+Dekorator\+::generuj (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Generuje próbkê sygna³u z ograniczon¹ amplitud¹. 
+
+\begin{DoxyReturn}{Returns}
+Wartoœæ próbki po ograniczeniu do maksymalnej wartoœci.
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_generator_dekorator_a649db772f70622f7b827b9c3515041a4}{Generator\+Dekorator}}.
+
+\Hypertarget{class_ograniczenie_amplitudy_dekorator_a0b61048fdad93318fda75963dd245203}\index{OgraniczenieAmplitudyDekorator@{OgraniczenieAmplitudyDekorator}!serialize@{serialize}}
+\index{serialize@{serialize}!OgraniczenieAmplitudyDekorator@{OgraniczenieAmplitudyDekorator}}
+\doxysubsubsection{\texorpdfstring{serialize()}{serialize()}}
+{\footnotesize\ttfamily \label{class_ograniczenie_amplitudy_dekorator_a0b61048fdad93318fda75963dd245203} 
+void Ograniczenie\+Amplitudy\+Dekorator\+::serialize (\begin{DoxyParamCaption}\item[{std\+::ofstream \&}]{out}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Zapisuje konfiguracjê dekoratora do pliku wyjœciowego. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em out} & Strumieñ wyjœciowy do którego zostanie zapisana konfiguracja.\\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_generator_acd60bdcd7d894f2fe86d42fb759e3151}{Generator}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Ograniczenie\+Amplitudy\+Dekorator.\+h\item 
+Ograniczenie\+Amplitudy\+Dekorator.\+cpp\end{DoxyCompactItemize}

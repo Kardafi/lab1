@@ -1,0 +1,92 @@
+\doxysection{Generator\+Dekorator Class Reference}
+\hypertarget{class_generator_dekorator}{}\label{class_generator_dekorator}\index{GeneratorDekorator@{GeneratorDekorator}}
+
+
+Klasa bazowa dla dekoratorów generatorów sygna³ów. Umo¿liwia rozszerzanie dzia³ania innych generatorów przy u¿yciu wzorca Dekorator.  
+
+
+
+
+{\ttfamily \#include $<$Generator\+Dekorator.\+h$>$}
+
+Inheritance diagram for Generator\+Dekorator\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=1.623188cm]{class_generator_dekorator}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_generator_dekorator_a80a92c50f632375b3f4cf504af62616f}{Generator\+Dekorator}} (std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_generator}{Generator}} $>$ \+\_\+generator)
+\begin{DoxyCompactList}\small\item\em Konstruktor dekoratora generatora. \end{DoxyCompactList}\item 
+virtual double \mbox{\hyperlink{class_generator_dekorator_a649db772f70622f7b827b9c3515041a4}{generuj}} ()=0
+\begin{DoxyCompactList}\small\item\em Generuje próbkê sygna³u z rozszerzon¹ funkcjonalnoœci¹. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_generator}{Generator}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Generator} ()=default
+\begin{DoxyCompactList}\small\item\em Wirtualny destruktor klasy \doxylink{class_generator}{Generator}. Umo¿liwia bezpieczne usuwanie obiektów pochodnych przez wskaŸnik do klasy bazowej. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_generator_acd60bdcd7d894f2fe86d42fb759e3151}{serialize}} (std\+::ofstream \&out) const =0
+\begin{DoxyCompactList}\small\item\em Serializuje konfiguracjê generatora do strumienia wyjœciowego. Musi zostaæ zaimplementowana w klasach pochodnych. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_generator_dekorator_a5548b250c463faf7e6c0b542897c8aac}\label{class_generator_dekorator_a5548b250c463faf7e6c0b542897c8aac} 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_generator}{Generator}} $>$ {\bfseries dekorowany\+Generator}
+\begin{DoxyCompactList}\small\item\em WskaŸnik do dekorowanego generatora. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Klasa bazowa dla dekoratorów generatorów sygna³ów. Umo¿liwia rozszerzanie dzia³ania innych generatorów przy u¿yciu wzorca Dekorator. 
+
+\label{doc-constructors}
+\Hypertarget{class_generator_dekorator_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_generator_dekorator_a80a92c50f632375b3f4cf504af62616f}\index{GeneratorDekorator@{GeneratorDekorator}!GeneratorDekorator@{GeneratorDekorator}}
+\index{GeneratorDekorator@{GeneratorDekorator}!GeneratorDekorator@{GeneratorDekorator}}
+\doxysubsubsection{\texorpdfstring{GeneratorDekorator()}{GeneratorDekorator()}}
+{\footnotesize\ttfamily \label{class_generator_dekorator_a80a92c50f632375b3f4cf504af62616f} 
+Generator\+Dekorator\+::\+Generator\+Dekorator (\begin{DoxyParamCaption}\item[{std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_generator}{Generator}} $>$}]{\+\_\+generator}{}\end{DoxyParamCaption})}
+
+
+
+Konstruktor dekoratora generatora. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+generator} & WskaŸnik do generatora, który ma byæ dekorowany.\\
+\hline
+\end{DoxyParams}
+
+
+\label{doc-func-members}
+\Hypertarget{class_generator_dekorator_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_generator_dekorator_a649db772f70622f7b827b9c3515041a4}\index{GeneratorDekorator@{GeneratorDekorator}!generuj@{generuj}}
+\index{generuj@{generuj}!GeneratorDekorator@{GeneratorDekorator}}
+\doxysubsubsection{\texorpdfstring{generuj()}{generuj()}}
+{\footnotesize\ttfamily \label{class_generator_dekorator_a649db772f70622f7b827b9c3515041a4} 
+double Generator\+Dekorator\+::generuj (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Generuje próbkê sygna³u z rozszerzon¹ funkcjonalnoœci¹. 
+
+\begin{DoxyReturn}{Returns}
+Wygenerowana próbka jako liczba zmiennoprzecinkowa (double).
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_generator_ae5497fda9b218ca286bae310ae08b991}{Generator}}.
+
+
+
+Implemented in \mbox{\hyperlink{class_ograniczenie_amplitudy_dekorator_af2c33c11ce9dfdfcbac16a6254fd5f2f}{Ograniczenie\+Amplitudy\+Dekorator}}, \mbox{\hyperlink{class_sygnal_bialy_szum_a20509cf006f32cf492fa2050d8c5833d}{Sygnal\+Bialy\+Szum}}, \mbox{\hyperlink{class_sygnal_prostokatny_dekorator_aca77546b8e32fda06e89b7e9fac813dc}{Sygnal\+Prostokatny\+Dekorator}}, \mbox{\hyperlink{class_sygnal_sinus_dekorator_a73f2879881eeb810913b5b8973a291f4}{Sygnal\+Sinus\+Dekorator}}, and \mbox{\hyperlink{class_sygnal_trojkatny_dekorator_a466cf1e72d6eddc3510e2f9d1d56afdb}{Sygnal\+Trojkatny\+Dekorator}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Generator\+Dekorator.\+h\item 
+Generator\+Dekorator.\+cpp\end{DoxyCompactItemize}

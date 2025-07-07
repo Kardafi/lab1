@@ -1,0 +1,165 @@
+\doxysection{Model\+ARX Class Reference}
+\hypertarget{class_model_a_r_x}{}\label{class_model_a_r_x}\index{ModelARX@{ModelARX}}
+
+
+Klasa reprezentuj¹ca dyskretny model ARX, dziedzicz¹ca po abstrakcyjnym obiekcie SISO.  
+
+
+
+
+{\ttfamily \#include $<$Model\+ARX.\+h$>$}
+
+Inheritance diagram for Model\+ARX\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_model_a_r_x}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_model_a_r_x_a21915c0690c31a4976b9bd6caa9598d6}{Model\+ARX}} (const std\+::vector$<$ double $>$ \&\+\_\+A, const std\+::vector$<$ double $>$ \&\+\_\+B, unsigned int \+\_\+k, int \+\_\+moc\+Szumu)
+\begin{DoxyCompactList}\small\item\em Konstruktor inicjalizuj¹cy model na podstawie wspó³czynników A, B, opóŸnienia i mocy szumu. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_model_a_r_x_a3b1e1d553fe40907829229f054617591}{Model\+ARX}} (const std\+::string \&sciezka\+Pliku)
+\begin{DoxyCompactList}\small\item\em Konstruktor inicjalizuj¹cy model na podstawie danych zapisanych w pliku. \end{DoxyCompactList}\item 
+\Hypertarget{class_model_a_r_x_abee5ae6d0ddc34baf68c5734133a9ca5}\label{class_model_a_r_x_abee5ae6d0ddc34baf68c5734133a9ca5} 
+{\bfseries \texorpdfstring{$\sim$}{\string~}\+Model\+ARX} ()
+\begin{DoxyCompactList}\small\item\em Destruktor modelu ARX. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_model_a_r_x_a5565e68de0dce0095fb500e59367f1b0}{Zapisz\+Do\+Pliku\+JSON}} (const std\+::string \&filename) const
+\begin{DoxyCompactList}\small\item\em Zapisuje parametry modelu ARX do pliku w formacie pseudo-\/\+JSON. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_model_a_r_x_ae9f127da578e2efd938ca1821d76cb42}{symuluj}} (double wejscie) override
+\begin{DoxyCompactList}\small\item\em Symuluje odpowiedŸ modelu na podstawie nowego wejœcia. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_model_a_r_x_ad02ac61b1f5fd68e115350734a9cf610}{serialize}} (std\+::ofstream \&out) const
+\begin{DoxyCompactList}\small\item\em Zapisuje dane modelu do strumienia wyjœciowego. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_model_a_r_x}{Model\+ARX}} $>$ \mbox{\hyperlink{class_model_a_r_x_ac73e60d8d9601bc7cf31f05acc10de3a}{deserialize}} (std\+::istream \&in)
+\begin{DoxyCompactList}\small\item\em Deserializuje model ARX z podanego strumienia wejœciowego. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Klasa reprezentuj¹ca dyskretny model ARX, dziedzicz¹ca po abstrakcyjnym obiekcie SISO. 
+
+Model opisuje zale¿noœæ sygna³u wyjœciowego od wczeœniejszych wartoœci wejœæ i wyjœæ, z uwzglêdnieniem czasu opóŸnienia oraz opcjonalnym dodawaniem szumu. 
+
+\label{doc-constructors}
+\Hypertarget{class_model_a_r_x_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_model_a_r_x_a21915c0690c31a4976b9bd6caa9598d6}\index{ModelARX@{ModelARX}!ModelARX@{ModelARX}}
+\index{ModelARX@{ModelARX}!ModelARX@{ModelARX}}
+\doxysubsubsection{\texorpdfstring{ModelARX()}{ModelARX()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_model_a_r_x_a21915c0690c31a4976b9bd6caa9598d6} 
+Model\+ARX\+::\+Model\+ARX (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ double $>$ \&}]{\+\_\+A}{, }\item[{const std\+::vector$<$ double $>$ \&}]{\+\_\+B}{, }\item[{unsigned int}]{\+\_\+k}{, }\item[{int}]{\+\_\+moc\+Szumu}{}\end{DoxyParamCaption})}
+
+
+
+Konstruktor inicjalizuj¹cy model na podstawie wspó³czynników A, B, opóŸnienia i mocy szumu. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+A} & Wspó³czynniki A (mianownik).\\
+\hline
+{\em \+\_\+B} & Wspó³czynniki B (licznik).\\
+\hline
+{\em \+\_\+k} & Dyskretny czas opóŸnienia.\\
+\hline
+{\em \+\_\+moc\+Szumu} & Moc szumu.\\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_model_a_r_x_a3b1e1d553fe40907829229f054617591}\index{ModelARX@{ModelARX}!ModelARX@{ModelARX}}
+\index{ModelARX@{ModelARX}!ModelARX@{ModelARX}}
+\doxysubsubsection{\texorpdfstring{ModelARX()}{ModelARX()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_model_a_r_x_a3b1e1d553fe40907829229f054617591} 
+Model\+ARX\+::\+Model\+ARX (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{sciezka\+Pliku}{}\end{DoxyParamCaption})}
+
+
+
+Konstruktor inicjalizuj¹cy model na podstawie danych zapisanych w pliku. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sciezka\+Pliku} & Œcie¿ka do pliku z danymi modelu.\\
+\hline
+\end{DoxyParams}
+
+
+\label{doc-func-members}
+\Hypertarget{class_model_a_r_x_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_model_a_r_x_ac73e60d8d9601bc7cf31f05acc10de3a}\index{ModelARX@{ModelARX}!deserialize@{deserialize}}
+\index{deserialize@{deserialize}!ModelARX@{ModelARX}}
+\doxysubsubsection{\texorpdfstring{deserialize()}{deserialize()}}
+{\footnotesize\ttfamily \label{class_model_a_r_x_ac73e60d8d9601bc7cf31f05acc10de3a} 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_model_a_r_x}{Model\+ARX}} $>$ Model\+ARX\+::deserialize (\begin{DoxyParamCaption}\item[{std\+::istream \&}]{in}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Deserializuje model ARX z podanego strumienia wejœciowego. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em in} & Strumieñ wejœciowy z danymi modelu.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+WskaŸnik {\ttfamily shared\+\_\+ptr} do utworzonego modelu ARX.
+\end{DoxyReturn}
+\Hypertarget{class_model_a_r_x_ad02ac61b1f5fd68e115350734a9cf610}\index{ModelARX@{ModelARX}!serialize@{serialize}}
+\index{serialize@{serialize}!ModelARX@{ModelARX}}
+\doxysubsubsection{\texorpdfstring{serialize()}{serialize()}}
+{\footnotesize\ttfamily \label{class_model_a_r_x_ad02ac61b1f5fd68e115350734a9cf610} 
+void Model\+ARX\+::serialize (\begin{DoxyParamCaption}\item[{std\+::ofstream \&}]{out}{}\end{DoxyParamCaption}) const}
+
+
+
+Zapisuje dane modelu do strumienia wyjœciowego. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em out} & Strumieñ wyjœciowy, do którego zostanie zapisany model.\\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_model_a_r_x_ae9f127da578e2efd938ca1821d76cb42}\index{ModelARX@{ModelARX}!symuluj@{symuluj}}
+\index{symuluj@{symuluj}!ModelARX@{ModelARX}}
+\doxysubsubsection{\texorpdfstring{symuluj()}{symuluj()}}
+{\footnotesize\ttfamily \label{class_model_a_r_x_ae9f127da578e2efd938ca1821d76cb42} 
+double Model\+ARX\+::symuluj (\begin{DoxyParamCaption}\item[{double}]{wejscie}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Symuluje odpowiedŸ modelu na podstawie nowego wejœcia. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em wejscie} & Nowa wartoœæ sygna³u wejœciowego.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Wygenerowana wartoœæ sygna³u wyjœciowego.
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_obiekt_s_i_s_o_abfdedbe53fa179844ca17c89c0472698}{Obiekt\+SISO}}.
+
+\Hypertarget{class_model_a_r_x_a5565e68de0dce0095fb500e59367f1b0}\index{ModelARX@{ModelARX}!ZapiszDoPlikuJSON@{ZapiszDoPlikuJSON}}
+\index{ZapiszDoPlikuJSON@{ZapiszDoPlikuJSON}!ModelARX@{ModelARX}}
+\doxysubsubsection{\texorpdfstring{ZapiszDoPlikuJSON()}{ZapiszDoPlikuJSON()}}
+{\footnotesize\ttfamily \label{class_model_a_r_x_a5565e68de0dce0095fb500e59367f1b0} 
+void Model\+ARX\+::\+Zapisz\+Do\+Pliku\+JSON (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{filename}{}\end{DoxyParamCaption}) const}
+
+
+
+Zapisuje parametry modelu ARX do pliku w formacie pseudo-\/\+JSON. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em filename} & Nazwa pliku, do którego zostan¹ zapisane parametry.\\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Model\+ARX.\+h\item 
+Model\+ARX.\+cpp\end{DoxyCompactItemize}

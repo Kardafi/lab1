@@ -1,0 +1,190 @@
+\doxysection{Petla\+Szeregowa Class Reference}
+\hypertarget{class_petla_szeregowa}{}\label{class_petla_szeregowa}\index{PetlaSzeregowa@{PetlaSzeregowa}}
+
+
+Reprezentuje pêtlê regulacji UAR o strukturze szeregowej. Ka¿dy sk³adnik pêtli otrzymuje wyjœcie poprzedniego sk³adnika jako swoje wejœcie. Mo¿e dzia³aæ zarówno w trybie otwartym, jak i zamkniêtym.  
+
+
+
+
+{\ttfamily \#include $<$Petla\+Szeregowa.\+h$>$}
+
+Inheritance diagram for Petla\+Szeregowa\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_petla_szeregowa}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_petla_szeregowa_a682ec2ac7f9b4e15e1b598ec615e7365}{Ustaw\+Tryb}} (tryb\+Pracy\+Petli tryb) override
+\begin{DoxyCompactList}\small\item\em Ustawia tryb pracy pêtli (np. prze³¹czenie z otwartej na zamkniêt¹). \end{DoxyCompactList}\item 
+tryb\+Pracy\+Petli \mbox{\hyperlink{class_petla_szeregowa_a6b0782d319a32bd715b1651673891608}{Pobierz\+Tryb}} () const override
+\begin{DoxyCompactList}\small\item\em Zwraca aktualny tryb pracy pêtli. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_petla_szeregowa_a5063d8ecdc0332052d99951c5d03fe16}{Dodaj\+Skladnik}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_obiekt_s_i_s_o}{Obiekt\+SISO}} $>$ skladnik) override
+\begin{DoxyCompactList}\small\item\em Dodaje sk³adnik (np. regulator, model ARX) na koniec ci¹gu elementów szeregowych. Sygna³ przechodzi przez ka¿dy z elementów po kolei. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_petla_szeregowa_a893af06592008d8b862e4212ce0a5664}{Dodaj\+Skladnik}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_obiekt_s_i_s_o}{Obiekt\+SISO}} $>$ skladnik, size\+\_\+t index) override
+\begin{DoxyCompactList}\small\item\em Dodaje sk³adnik do wskazanej pozycji w szeregu sk³adników. Pozwala wstawiæ nowy element miêdzy istniej¹ce sk³adniki. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_petla_szeregowa_a9c3a1335295101c912021ecb2665bfa7}{Usun\+Skladnik}} (size\+\_\+t index) override
+\begin{DoxyCompactList}\small\item\em Usuwa sk³adnik z listy wed³ug indeksu. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_petla_szeregowa_a0a9b9fe1f4046950ca1f4eb4cc402209}{symuluj}} (double wejscie) override
+\begin{DoxyCompactList}\small\item\em Przeprowadza symulacjê pêtli szeregowej. \end{DoxyCompactList}\item 
+\Hypertarget{class_petla_szeregowa_a63e595cd95e8f3ce628dd2bf0638c403}\label{class_petla_szeregowa_a63e595cd95e8f3ce628dd2bf0638c403} 
+{\bfseries Petla\+UAR} (tryb\+Pracy\+Petli \+\_\+tryb)
+\begin{DoxyCompactList}\small\item\em Dziedziczy konstruktor z klasy bazowej \doxylink{class_petla_u_a_r}{Petla\+UAR}. Dziêki temu mo¿na tworzyæ pêtle szeregowe w wybranym trybie pracy (otwarta lub zamkniêta). \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_petla_u_a_r}{Petla\+UAR}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Petla\+UAR} ()=default
+\begin{DoxyCompactList}\small\item\em Wirtualny destruktor – umo¿liwia poprawne zarz¹dzanie pamiêci¹ w klasach pochodnych. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_petla_u_a_r_a63e595cd95e8f3ce628dd2bf0638c403}{Petla\+UAR}} (tryb\+Pracy\+Petli \+\_\+tryb)
+\begin{DoxyCompactList}\small\item\em Konstruktor z parametrem inicjalizuj¹cym tryb pracy. Domyœlnie inicjuje tryb oraz zeruje poprzednie wyjœcie. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_petla_u_a_r}{Petla\+UAR}}}
+\begin{DoxyCompactItemize}
+\item 
+tryb\+Pracy\+Petli {\bfseries tryb\+Pracy}
+\begin{DoxyCompactList}\small\item\em Tryb pracy pêtli\+: otwarty (brak sprzê¿enia zwrotnego) lub zamkniêty (z uchybem). \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_obiekt_s_i_s_o}{Obiekt\+SISO}} $>$ $>$ {\bfseries skladniki}
+\begin{DoxyCompactList}\small\item\em Wektor wskaŸników do sk³adników pêtli. Sk³adniki musz¹ implementowaæ interfejs \doxylink{class_obiekt_s_i_s_o}{Obiekt\+SISO}. Dziêki temu mo¿na ³¹czyæ ró¿ne elementy systemu regulacji w elastyczny sposób. \end{DoxyCompactList}\item 
+double {\bfseries poprzednie\+Wyjscie}
+\begin{DoxyCompactList}\small\item\em Poprzednia wartoœæ wyjœciowa pêtli. W trybie zamkniêtym s³u¿y jako wartoœæ sprzê¿enia zwrotnego przy obliczaniu uchybu regulacji. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Reprezentuje pêtlê regulacji UAR o strukturze szeregowej. Ka¿dy sk³adnik pêtli otrzymuje wyjœcie poprzedniego sk³adnika jako swoje wejœcie. Mo¿e dzia³aæ zarówno w trybie otwartym, jak i zamkniêtym. 
+
+\label{doc-func-members}
+\Hypertarget{class_petla_szeregowa_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_petla_szeregowa_a5063d8ecdc0332052d99951c5d03fe16}\index{PetlaSzeregowa@{PetlaSzeregowa}!DodajSkladnik@{DodajSkladnik}}
+\index{DodajSkladnik@{DodajSkladnik}!PetlaSzeregowa@{PetlaSzeregowa}}
+\doxysubsubsection{\texorpdfstring{DodajSkladnik()}{DodajSkladnik()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_petla_szeregowa_a5063d8ecdc0332052d99951c5d03fe16} 
+void Petla\+Szeregowa\+::\+Dodaj\+Skladnik (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_obiekt_s_i_s_o}{Obiekt\+SISO}} $>$}]{skladnik}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Dodaje sk³adnik (np. regulator, model ARX) na koniec ci¹gu elementów szeregowych. Sygna³ przechodzi przez ka¿dy z elementów po kolei. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em skladnik} & Inteligentny wskaŸnik do obiektu klasy \doxylink{class_obiekt_s_i_s_o}{Obiekt\+SISO}.\\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{class_petla_u_a_r_a4efb3e179a130a1dc30d251571ed0237}{Petla\+UAR}}.
+
+\Hypertarget{class_petla_szeregowa_a893af06592008d8b862e4212ce0a5664}\index{PetlaSzeregowa@{PetlaSzeregowa}!DodajSkladnik@{DodajSkladnik}}
+\index{DodajSkladnik@{DodajSkladnik}!PetlaSzeregowa@{PetlaSzeregowa}}
+\doxysubsubsection{\texorpdfstring{DodajSkladnik()}{DodajSkladnik()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_petla_szeregowa_a893af06592008d8b862e4212ce0a5664} 
+void Petla\+Szeregowa\+::\+Dodaj\+Skladnik (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_obiekt_s_i_s_o}{Obiekt\+SISO}} $>$}]{skladnik}{, }\item[{size\+\_\+t}]{index}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Dodaje sk³adnik do wskazanej pozycji w szeregu sk³adników. Pozwala wstawiæ nowy element miêdzy istniej¹ce sk³adniki. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em skladnik} & WskaŸnik do obiektu klasy \doxylink{class_obiekt_s_i_s_o}{Obiekt\+SISO}.\\
+\hline
+{\em index} & Indeks pozycji w wektorze sk³adników.\\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{class_petla_u_a_r_ae0c6019328215fff0c196abf9dc8651d}{Petla\+UAR}}.
+
+\Hypertarget{class_petla_szeregowa_a6b0782d319a32bd715b1651673891608}\index{PetlaSzeregowa@{PetlaSzeregowa}!PobierzTryb@{PobierzTryb}}
+\index{PobierzTryb@{PobierzTryb}!PetlaSzeregowa@{PetlaSzeregowa}}
+\doxysubsubsection{\texorpdfstring{PobierzTryb()}{PobierzTryb()}}
+{\footnotesize\ttfamily \label{class_petla_szeregowa_a6b0782d319a32bd715b1651673891608} 
+tryb\+Pracy\+Petli Petla\+Szeregowa\+::\+Pobierz\+Tryb (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Zwraca aktualny tryb pracy pêtli. 
+
+\begin{DoxyReturn}{Returns}
+Aktualnie ustawiony tryb\+: OTWARTA lub ZAMKNIETA.
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{class_petla_u_a_r_a3be1b2b8add40e31d7133405fcb1a8a6}{Petla\+UAR}}.
+
+\Hypertarget{class_petla_szeregowa_a0a9b9fe1f4046950ca1f4eb4cc402209}\index{PetlaSzeregowa@{PetlaSzeregowa}!symuluj@{symuluj}}
+\index{symuluj@{symuluj}!PetlaSzeregowa@{PetlaSzeregowa}}
+\doxysubsubsection{\texorpdfstring{symuluj()}{symuluj()}}
+{\footnotesize\ttfamily \label{class_petla_szeregowa_a0a9b9fe1f4046950ca1f4eb4cc402209} 
+double Petla\+Szeregowa\+::symuluj (\begin{DoxyParamCaption}\item[{double}]{wejscie}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Przeprowadza symulacjê pêtli szeregowej. 
+
+
+\begin{DoxyItemize}
+\item W trybie OTWARTA\+: wejœcie przekazywane jest do pierwszego sk³adnika. Ka¿dy kolejny sk³adnik przetwarza wynik poprzedniego.
+\item W trybie ZAMKNIETA\+: obliczany jest uchyb = wejœcie -\/ poprzednie\+Wyjscie, który staje siê sygna³em wejœciowym dla pierwszego sk³adnika.
+\item Wynik koñcowy (wyjœcie ostatniego sk³adnika) jest pamiêtany jako poprzednie\+Wyjscie.
+\end{DoxyItemize}
+
+
+\begin{DoxyParams}{Parameters}
+{\em wejscie} & Sygna³ wejœciowy do ca³ej pêtli.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Wyjœcie pêtli po przejœciu przez wszystkie sk³adniki.
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_petla_u_a_r_ad0931af39f15d33c012fb4d4230ee557}{Petla\+UAR}}.
+
+\Hypertarget{class_petla_szeregowa_a682ec2ac7f9b4e15e1b598ec615e7365}\index{PetlaSzeregowa@{PetlaSzeregowa}!UstawTryb@{UstawTryb}}
+\index{UstawTryb@{UstawTryb}!PetlaSzeregowa@{PetlaSzeregowa}}
+\doxysubsubsection{\texorpdfstring{UstawTryb()}{UstawTryb()}}
+{\footnotesize\ttfamily \label{class_petla_szeregowa_a682ec2ac7f9b4e15e1b598ec615e7365} 
+void Petla\+Szeregowa\+::\+Ustaw\+Tryb (\begin{DoxyParamCaption}\item[{tryb\+Pracy\+Petli}]{tryb}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Ustawia tryb pracy pêtli (np. prze³¹czenie z otwartej na zamkniêt¹). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em tryb} & Nowy tryb pracy\+: OTWARTA lub ZAMKNIETA.\\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{class_petla_u_a_r_a977a9f98fcdf9fd9aa2add46bf5fcce0}{Petla\+UAR}}.
+
+\Hypertarget{class_petla_szeregowa_a9c3a1335295101c912021ecb2665bfa7}\index{PetlaSzeregowa@{PetlaSzeregowa}!UsunSkladnik@{UsunSkladnik}}
+\index{UsunSkladnik@{UsunSkladnik}!PetlaSzeregowa@{PetlaSzeregowa}}
+\doxysubsubsection{\texorpdfstring{UsunSkladnik()}{UsunSkladnik()}}
+{\footnotesize\ttfamily \label{class_petla_szeregowa_a9c3a1335295101c912021ecb2665bfa7} 
+void Petla\+Szeregowa\+::\+Usun\+Skladnik (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{index}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Usuwa sk³adnik z listy wed³ug indeksu. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & Indeks sk³adnika do usuniêcia.\\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{class_petla_u_a_r_a862d25628ccb5da2f44a2d52c02e2546}{Petla\+UAR}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Petla\+Szeregowa.\+h\item 
+Petla\+Szeregowa.\+cpp\end{DoxyCompactItemize}

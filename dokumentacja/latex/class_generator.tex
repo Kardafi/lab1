@@ -1,0 +1,76 @@
+\doxysection{Generator Class Reference}
+\hypertarget{class_generator}{}\label{class_generator}\index{Generator@{Generator}}
+
+
+Abstrakcyjna klasa bazowa dla wszystkich generatorów sygna³ów.  
+
+
+
+
+{\ttfamily \#include $<$Generator.\+h$>$}
+
+Inheritance diagram for Generator\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=1.623188cm]{class_generator}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_generator_a175792ff2622a6ce48bf2adab7e09e58}\label{class_generator_a175792ff2622a6ce48bf2adab7e09e58} 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Generator} ()=default
+\begin{DoxyCompactList}\small\item\em Wirtualny destruktor klasy \doxylink{class_generator}{Generator}. Umo¿liwia bezpieczne usuwanie obiektów pochodnych przez wskaŸnik do klasy bazowej. \end{DoxyCompactList}\item 
+virtual double \mbox{\hyperlink{class_generator_ae5497fda9b218ca286bae310ae08b991}{generuj}} ()=0
+\begin{DoxyCompactList}\small\item\em Generuje kolejn¹ próbkê sygna³u. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_generator_acd60bdcd7d894f2fe86d42fb759e3151}{serialize}} (std\+::ofstream \&out) const =0
+\begin{DoxyCompactList}\small\item\em Serializuje konfiguracjê generatora do strumienia wyjœciowego. Musi zostaæ zaimplementowana w klasach pochodnych. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Abstrakcyjna klasa bazowa dla wszystkich generatorów sygna³ów. 
+
+\label{doc-func-members}
+\Hypertarget{class_generator_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_generator_ae5497fda9b218ca286bae310ae08b991}\index{Generator@{Generator}!generuj@{generuj}}
+\index{generuj@{generuj}!Generator@{Generator}}
+\doxysubsubsection{\texorpdfstring{generuj()}{generuj()}}
+{\footnotesize\ttfamily \label{class_generator_ae5497fda9b218ca286bae310ae08b991} 
+virtual double Generator\+::generuj (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Generuje kolejn¹ próbkê sygna³u. 
+
+\begin{DoxyReturn}{Returns}
+Wygenerowana próbka jako liczba zmiennoprzecinkowa (double).
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{class_generator_dekorator_a649db772f70622f7b827b9c3515041a4}{Generator\+Dekorator}}, \mbox{\hyperlink{class_generator_stala_aec037b76f0c62471be04a818eddc3160}{Generator\+Stala}}, \mbox{\hyperlink{class_ograniczenie_amplitudy_dekorator_af2c33c11ce9dfdfcbac16a6254fd5f2f}{Ograniczenie\+Amplitudy\+Dekorator}}, \mbox{\hyperlink{class_sygnal_bialy_szum_a20509cf006f32cf492fa2050d8c5833d}{Sygnal\+Bialy\+Szum}}, \mbox{\hyperlink{class_sygnal_prostokatny_dekorator_aca77546b8e32fda06e89b7e9fac813dc}{Sygnal\+Prostokatny\+Dekorator}}, \mbox{\hyperlink{class_sygnal_sinus_dekorator_a73f2879881eeb810913b5b8973a291f4}{Sygnal\+Sinus\+Dekorator}}, and \mbox{\hyperlink{class_sygnal_trojkatny_dekorator_a466cf1e72d6eddc3510e2f9d1d56afdb}{Sygnal\+Trojkatny\+Dekorator}}.
+
+\Hypertarget{class_generator_acd60bdcd7d894f2fe86d42fb759e3151}\index{Generator@{Generator}!serialize@{serialize}}
+\index{serialize@{serialize}!Generator@{Generator}}
+\doxysubsubsection{\texorpdfstring{serialize()}{serialize()}}
+{\footnotesize\ttfamily \label{class_generator_acd60bdcd7d894f2fe86d42fb759e3151} 
+virtual void Generator\+::serialize (\begin{DoxyParamCaption}\item[{std\+::ofstream \&}]{out}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Serializuje konfiguracjê generatora do strumienia wyjœciowego. Musi zostaæ zaimplementowana w klasach pochodnych. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em out} & Referencja do otwartego strumienia wyjœciowego (np. pliku).\\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{class_generator_stala_ac8f97e4df1ae70898a10345793f6d9ea}{Generator\+Stala}}, \mbox{\hyperlink{class_ograniczenie_amplitudy_dekorator_a0b61048fdad93318fda75963dd245203}{Ograniczenie\+Amplitudy\+Dekorator}}, \mbox{\hyperlink{class_sygnal_bialy_szum_a85fbf68bea9ec451359315a406cb79df}{Sygnal\+Bialy\+Szum}}, \mbox{\hyperlink{class_sygnal_prostokatny_dekorator_a58c5d60817c553a525df05cf14aa88b5}{Sygnal\+Prostokatny\+Dekorator}}, \mbox{\hyperlink{class_sygnal_sinus_dekorator_a951dedc4c732b507bb8db0d036f927cf}{Sygnal\+Sinus\+Dekorator}}, and \mbox{\hyperlink{class_sygnal_trojkatny_dekorator_a07f4be00bdff9d9b5157229840a2e6fa}{Sygnal\+Trojkatny\+Dekorator}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Generator.\+h\end{DoxyCompactItemize}

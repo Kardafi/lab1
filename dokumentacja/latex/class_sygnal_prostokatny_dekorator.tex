@@ -1,0 +1,118 @@
+\doxysection{Sygnal\+Prostokatny\+Dekorator Class Reference}
+\hypertarget{class_sygnal_prostokatny_dekorator}{}\label{class_sygnal_prostokatny_dekorator}\index{SygnalProstokatnyDekorator@{SygnalProstokatnyDekorator}}
+
+
+Dekorator generuj¹cy sygna³ prostok¹tny. Tworzy sygna³ o zadanej amplitudzie, okresie i wype³nieniu.  
+
+
+
+
+{\ttfamily \#include $<$Sygnal\+Prostokatny\+Dekorator.\+h$>$}
+
+Inheritance diagram for Sygnal\+Prostokatny\+Dekorator\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_sygnal_prostokatny_dekorator}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_sygnal_prostokatny_dekorator_a12090efdec355e94f7b994ae1d9510d0}{Sygnal\+Prostokatny\+Dekorator}} (std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_generator}{Generator}} $>$ \+\_\+generator, double \+\_\+amplituda, int \+\_\+okres, double \+\_\+wypelnienie)
+\begin{DoxyCompactList}\small\item\em Konstruktor dekoratora generuj¹cego sygna³ prostok¹tny. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_sygnal_prostokatny_dekorator_aca77546b8e32fda06e89b7e9fac813dc}{generuj}} () override
+\begin{DoxyCompactList}\small\item\em Generuje próbkê sygna³u prostok¹tnego. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_sygnal_prostokatny_dekorator_a58c5d60817c553a525df05cf14aa88b5}{serialize}} (std\+::ofstream \&out) const
+\begin{DoxyCompactList}\small\item\em Serializuje dekorator do pliku. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_generator_dekorator}{Generator\+Dekorator}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_generator_dekorator_a80a92c50f632375b3f4cf504af62616f}{Generator\+Dekorator}} (std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_generator}{Generator}} $>$ \+\_\+generator)
+\begin{DoxyCompactList}\small\item\em Konstruktor dekoratora generatora. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_generator}{Generator}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Generator} ()=default
+\begin{DoxyCompactList}\small\item\em Wirtualny destruktor klasy \doxylink{class_generator}{Generator}. Umo¿liwia bezpieczne usuwanie obiektów pochodnych przez wskaŸnik do klasy bazowej. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Public Attributes inherited from \mbox{\hyperlink{class_generator_dekorator}{Generator\+Dekorator}}}
+\begin{DoxyCompactItemize}
+\item 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_generator}{Generator}} $>$ {\bfseries dekorowany\+Generator}
+\begin{DoxyCompactList}\small\item\em WskaŸnik do dekorowanego generatora. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Dekorator generuj¹cy sygna³ prostok¹tny. Tworzy sygna³ o zadanej amplitudzie, okresie i wype³nieniu. 
+
+\label{doc-constructors}
+\Hypertarget{class_sygnal_prostokatny_dekorator_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_sygnal_prostokatny_dekorator_a12090efdec355e94f7b994ae1d9510d0}\index{SygnalProstokatnyDekorator@{SygnalProstokatnyDekorator}!SygnalProstokatnyDekorator@{SygnalProstokatnyDekorator}}
+\index{SygnalProstokatnyDekorator@{SygnalProstokatnyDekorator}!SygnalProstokatnyDekorator@{SygnalProstokatnyDekorator}}
+\doxysubsubsection{\texorpdfstring{SygnalProstokatnyDekorator()}{SygnalProstokatnyDekorator()}}
+{\footnotesize\ttfamily \label{class_sygnal_prostokatny_dekorator_a12090efdec355e94f7b994ae1d9510d0} 
+Sygnal\+Prostokatny\+Dekorator\+::\+Sygnal\+Prostokatny\+Dekorator (\begin{DoxyParamCaption}\item[{std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_generator}{Generator}} $>$}]{\+\_\+generator}{, }\item[{double}]{\+\_\+amplituda}{, }\item[{int}]{\+\_\+okres}{, }\item[{double}]{\+\_\+wypelnienie}{}\end{DoxyParamCaption})}
+
+
+
+Konstruktor dekoratora generuj¹cego sygna³ prostok¹tny. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em generator} & Referencja do dekorowanego generatora.\\
+\hline
+{\em \+\_\+amplituda} & Amplituda sygna³u prostok¹tnego.\\
+\hline
+{\em \+\_\+okres} & Okres sygna³u prostok¹tnego (liczba próbek).\\
+\hline
+{\em \+\_\+wypelnienie} & Wype³nienie sygna³u prostok¹tnego (0-\/100\%).\\
+\hline
+\end{DoxyParams}
+
+
+\label{doc-func-members}
+\Hypertarget{class_sygnal_prostokatny_dekorator_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_sygnal_prostokatny_dekorator_aca77546b8e32fda06e89b7e9fac813dc}\index{SygnalProstokatnyDekorator@{SygnalProstokatnyDekorator}!generuj@{generuj}}
+\index{generuj@{generuj}!SygnalProstokatnyDekorator@{SygnalProstokatnyDekorator}}
+\doxysubsubsection{\texorpdfstring{generuj()}{generuj()}}
+{\footnotesize\ttfamily \label{class_sygnal_prostokatny_dekorator_aca77546b8e32fda06e89b7e9fac813dc} 
+double Sygnal\+Prostokatny\+Dekorator\+::generuj (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Generuje próbkê sygna³u prostok¹tnego. 
+
+\begin{DoxyReturn}{Returns}
+Wartoœæ próbki sygna³u prostok¹tnego (double).
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_generator_dekorator_a649db772f70622f7b827b9c3515041a4}{Generator\+Dekorator}}.
+
+\Hypertarget{class_sygnal_prostokatny_dekorator_a58c5d60817c553a525df05cf14aa88b5}\index{SygnalProstokatnyDekorator@{SygnalProstokatnyDekorator}!serialize@{serialize}}
+\index{serialize@{serialize}!SygnalProstokatnyDekorator@{SygnalProstokatnyDekorator}}
+\doxysubsubsection{\texorpdfstring{serialize()}{serialize()}}
+{\footnotesize\ttfamily \label{class_sygnal_prostokatny_dekorator_a58c5d60817c553a525df05cf14aa88b5} 
+void Sygnal\+Prostokatny\+Dekorator\+::serialize (\begin{DoxyParamCaption}\item[{std\+::ofstream \&}]{out}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Serializuje dekorator do pliku. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em out} & Strumieñ wyjœciowy do zapisu danych.\\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_generator_acd60bdcd7d894f2fe86d42fb759e3151}{Generator}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Sygnal\+Prostokatny\+Dekorator.\+h\item 
+Sygnal\+Prostokatny\+Dekorator.\+cpp\end{DoxyCompactItemize}

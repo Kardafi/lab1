@@ -1,0 +1,24 @@
+\doxysection{Sygnal\+Bialy\+Szum.\+h}
+\hypertarget{_sygnal_bialy_szum_8h_source}{}\label{_sygnal_bialy_szum_8h_source}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ "{}GeneratorDekorator.h"{}}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <random>}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00009\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_sygnal_bialy_szum_a416e283a12ccfb3b72685484a7ab009a}{SygnalBialySzum}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_generator_dekorator_a80a92c50f632375b3f4cf504af62616f}{GeneratorDekorator}}}
+\DoxyCodeLine{00010\ \{}
+\DoxyCodeLine{00014\ \ \ \ \ \textcolor{keywordtype}{double}\ amplituda;}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00019\ \ \ \ \ std::default\_random\_engine\ random\_engine;}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00024\ \ \ \ \ std::uniform\_real\_distribution<double>\ rozklad;}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00032\ \ \ \ \ \mbox{\hyperlink{class_sygnal_bialy_szum_a416e283a12ccfb3b72685484a7ab009a}{SygnalBialySzum}}(std::unique\_ptr<Generator>\ \_generator,\ \textcolor{keywordtype}{double}\ \_amplituda);}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_sygnal_bialy_szum_a20509cf006f32cf492fa2050d8c5833d}{generuj}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_sygnal_bialy_szum_a85fbf68bea9ec451359315a406cb79df}{serialize}}(std::ofstream\&\ out)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00045\ \};}
+
+\end{DoxyCode}

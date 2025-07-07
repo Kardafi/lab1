@@ -1,0 +1,216 @@
+\doxysection{Regulator\+PID Class Reference}
+\hypertarget{class_regulator_p_i_d}{}\label{class_regulator_p_i_d}\index{RegulatorPID@{RegulatorPID}}
+
+
+Klasa reprezentuj¹ca regulator PID (Proporcjonalno-\/\+Ca³kuj¹co-\/\+Ró¿niczkuj¹cy), dziedzicz¹ca po abstrakcyjnej klasie \doxylink{class_obiekt_s_i_s_o}{Obiekt\+SISO}.  
+
+
+
+
+{\ttfamily \#include $<$Regulator\+PID.\+h$>$}
+
+Inheritance diagram for Regulator\+PID\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_regulator_p_i_d}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_regulator_p_i_d_a746ca93e5c70d5f22ae9d13355ea4dd8}{Regulator\+PID}} (double \+\_\+k)
+\begin{DoxyCompactList}\small\item\em Konstruktor tworz¹cy regulator z tylko wzmocnieniem proporcjonalnym. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_regulator_p_i_d_aa782cd6c8ee8a0ecaf82918034b92b76}{Regulator\+PID}} (double \+\_\+k, double \+\_\+\+Ti)
+\begin{DoxyCompactList}\small\item\em Konstruktor tworz¹cy regulator PI (Proporcjonalno-\/\+Ca³kuj¹cy). \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_regulator_p_i_d_aa61d940e84e57257dddbc9e079b52639}{Regulator\+PID}} (double \+\_\+k, double \+\_\+\+Ti, double \+\_\+\+Td)
+\begin{DoxyCompactList}\small\item\em Konstruktor tworz¹cy regulator PID (Proporcjonalno-\/\+Ca³kuj¹co-\/\+Ró¿niczkuj¹cy). \end{DoxyCompactList}\item 
+\Hypertarget{class_regulator_p_i_d_acff6c3727cb5c5ee8b49829cfba0043d}\label{class_regulator_p_i_d_acff6c3727cb5c5ee8b49829cfba0043d} 
+{\bfseries \texorpdfstring{$\sim$}{\string~}\+Regulator\+PID} ()
+\begin{DoxyCompactList}\small\item\em Destruktor klasy \doxylink{class_regulator_p_i_d}{Regulator\+PID}. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_regulator_p_i_d_af0237afe216e5dffe3403b6dcb815402}{symuluj}} (double wejscie) override
+\begin{DoxyCompactList}\small\item\em Symuluje odpowiedŸ regulatora na podstawie aktualnego uchybu. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_regulator_p_i_d_a2ab1bcf615d4ba04a26d7dbae108f672}{setK}} (double \+\_\+k)
+\begin{DoxyCompactList}\small\item\em Ustawia nowe wzmocnienie proporcjonalne. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_regulator_p_i_d_a0bef218ad9e48334cff7126f255eb71d}{set\+Ti}} (double \+\_\+\+Ti)
+\begin{DoxyCompactList}\small\item\em Ustawia nowy czas ca³kowania. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_regulator_p_i_d_a36682e2841e9496f682686d860def183}{set\+Td}} (double \+\_\+\+Td)
+\begin{DoxyCompactList}\small\item\em Ustawia nowy czas ró¿niczkowania. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_regulator_p_i_d_ace68d9bb9b46b13483383b80765891c2}{serialize}} (std\+::ostream \&out) const
+\begin{DoxyCompactList}\small\item\em Serializuje obiekt regulatora do strumienia wyjœciowego. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_regulator_p_i_d}{Regulator\+PID}} $>$ \mbox{\hyperlink{class_regulator_p_i_d_a1cc0281330c9d9770260626ffc47a693}{deserialize}} (std\+::istream \&in)
+\begin{DoxyCompactList}\small\item\em Deserializuje obiekt regulatora z podanego strumienia wejœciowego. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Klasa reprezentuj¹ca regulator PID (Proporcjonalno-\/\+Ca³kuj¹co-\/\+Ró¿niczkuj¹cy), dziedzicz¹ca po abstrakcyjnej klasie \doxylink{class_obiekt_s_i_s_o}{Obiekt\+SISO}. 
+
+Regulator przetwarza sygna³ wejœciowy (uchyb) na podstawie sk³adników P, I i D, generuj¹c odpowiedŸ steruj¹c¹. 
+
+\label{doc-constructors}
+\Hypertarget{class_regulator_p_i_d_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_regulator_p_i_d_a746ca93e5c70d5f22ae9d13355ea4dd8}\index{RegulatorPID@{RegulatorPID}!RegulatorPID@{RegulatorPID}}
+\index{RegulatorPID@{RegulatorPID}!RegulatorPID@{RegulatorPID}}
+\doxysubsubsection{\texorpdfstring{RegulatorPID()}{RegulatorPID()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily \label{class_regulator_p_i_d_a746ca93e5c70d5f22ae9d13355ea4dd8} 
+Regulator\+PID\+::\+Regulator\+PID (\begin{DoxyParamCaption}\item[{double}]{\+\_\+k}{}\end{DoxyParamCaption})}
+
+
+
+Konstruktor tworz¹cy regulator z tylko wzmocnieniem proporcjonalnym. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+k} & Wzmocnienie proporcjonalne.\\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_regulator_p_i_d_aa782cd6c8ee8a0ecaf82918034b92b76}\index{RegulatorPID@{RegulatorPID}!RegulatorPID@{RegulatorPID}}
+\index{RegulatorPID@{RegulatorPID}!RegulatorPID@{RegulatorPID}}
+\doxysubsubsection{\texorpdfstring{RegulatorPID()}{RegulatorPID()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily \label{class_regulator_p_i_d_aa782cd6c8ee8a0ecaf82918034b92b76} 
+Regulator\+PID\+::\+Regulator\+PID (\begin{DoxyParamCaption}\item[{double}]{\+\_\+k}{, }\item[{double}]{\+\_\+\+Ti}{}\end{DoxyParamCaption})}
+
+
+
+Konstruktor tworz¹cy regulator PI (Proporcjonalno-\/\+Ca³kuj¹cy). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+k} & Wzmocnienie proporcjonalne.\\
+\hline
+{\em \+\_\+\+Ti} & Czas ca³kowania.\\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_regulator_p_i_d_aa61d940e84e57257dddbc9e079b52639}\index{RegulatorPID@{RegulatorPID}!RegulatorPID@{RegulatorPID}}
+\index{RegulatorPID@{RegulatorPID}!RegulatorPID@{RegulatorPID}}
+\doxysubsubsection{\texorpdfstring{RegulatorPID()}{RegulatorPID()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily \label{class_regulator_p_i_d_aa61d940e84e57257dddbc9e079b52639} 
+Regulator\+PID\+::\+Regulator\+PID (\begin{DoxyParamCaption}\item[{double}]{\+\_\+k}{, }\item[{double}]{\+\_\+\+Ti}{, }\item[{double}]{\+\_\+\+Td}{}\end{DoxyParamCaption})}
+
+
+
+Konstruktor tworz¹cy regulator PID (Proporcjonalno-\/\+Ca³kuj¹co-\/\+Ró¿niczkuj¹cy). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+k} & Wzmocnienie proporcjonalne.\\
+\hline
+{\em \+\_\+\+Ti} & Czas ca³kowania.\\
+\hline
+{\em \+\_\+\+Td} & Czas ró¿niczkowania.\\
+\hline
+\end{DoxyParams}
+
+
+\label{doc-func-members}
+\Hypertarget{class_regulator_p_i_d_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_regulator_p_i_d_a1cc0281330c9d9770260626ffc47a693}\index{RegulatorPID@{RegulatorPID}!deserialize@{deserialize}}
+\index{deserialize@{deserialize}!RegulatorPID@{RegulatorPID}}
+\doxysubsubsection{\texorpdfstring{deserialize()}{deserialize()}}
+{\footnotesize\ttfamily \label{class_regulator_p_i_d_a1cc0281330c9d9770260626ffc47a693} 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_regulator_p_i_d}{Regulator\+PID}} $>$ Regulator\+PID\+::deserialize (\begin{DoxyParamCaption}\item[{std\+::istream \&}]{in}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Deserializuje obiekt regulatora z podanego strumienia wejœciowego. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em in} & Strumieñ wejœciowy zawieraj¹cy dane do odczytu.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+WskaŸnik do nowo utworzonego obiektu \doxylink{class_regulator_p_i_d}{Regulator\+PID}.
+\end{DoxyReturn}
+\Hypertarget{class_regulator_p_i_d_ace68d9bb9b46b13483383b80765891c2}\index{RegulatorPID@{RegulatorPID}!serialize@{serialize}}
+\index{serialize@{serialize}!RegulatorPID@{RegulatorPID}}
+\doxysubsubsection{\texorpdfstring{serialize()}{serialize()}}
+{\footnotesize\ttfamily \label{class_regulator_p_i_d_ace68d9bb9b46b13483383b80765891c2} 
+void Regulator\+PID\+::serialize (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{out}{}\end{DoxyParamCaption}) const}
+
+
+
+Serializuje obiekt regulatora do strumienia wyjœciowego. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em out} & Strumieñ wyjœciowy do zapisu danych.\\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_regulator_p_i_d_a2ab1bcf615d4ba04a26d7dbae108f672}\index{RegulatorPID@{RegulatorPID}!setK@{setK}}
+\index{setK@{setK}!RegulatorPID@{RegulatorPID}}
+\doxysubsubsection{\texorpdfstring{setK()}{setK()}}
+{\footnotesize\ttfamily \label{class_regulator_p_i_d_a2ab1bcf615d4ba04a26d7dbae108f672} 
+void Regulator\+PID\+::setK (\begin{DoxyParamCaption}\item[{double}]{\+\_\+k}{}\end{DoxyParamCaption})}
+
+
+
+Ustawia nowe wzmocnienie proporcjonalne. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+k} & Nowe wzmocnienie proporcjonalne.\\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_regulator_p_i_d_a36682e2841e9496f682686d860def183}\index{RegulatorPID@{RegulatorPID}!setTd@{setTd}}
+\index{setTd@{setTd}!RegulatorPID@{RegulatorPID}}
+\doxysubsubsection{\texorpdfstring{setTd()}{setTd()}}
+{\footnotesize\ttfamily \label{class_regulator_p_i_d_a36682e2841e9496f682686d860def183} 
+void Regulator\+PID\+::set\+Td (\begin{DoxyParamCaption}\item[{double}]{\+\_\+\+Td}{}\end{DoxyParamCaption})}
+
+
+
+Ustawia nowy czas ró¿niczkowania. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+\+Td} & Nowy czas ró¿niczkowania.\\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_regulator_p_i_d_a0bef218ad9e48334cff7126f255eb71d}\index{RegulatorPID@{RegulatorPID}!setTi@{setTi}}
+\index{setTi@{setTi}!RegulatorPID@{RegulatorPID}}
+\doxysubsubsection{\texorpdfstring{setTi()}{setTi()}}
+{\footnotesize\ttfamily \label{class_regulator_p_i_d_a0bef218ad9e48334cff7126f255eb71d} 
+void Regulator\+PID\+::set\+Ti (\begin{DoxyParamCaption}\item[{double}]{\+\_\+\+Ti}{}\end{DoxyParamCaption})}
+
+
+
+Ustawia nowy czas ca³kowania. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+\+Ti} & Nowy czas ca³kowania.\\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_regulator_p_i_d_af0237afe216e5dffe3403b6dcb815402}\index{RegulatorPID@{RegulatorPID}!symuluj@{symuluj}}
+\index{symuluj@{symuluj}!RegulatorPID@{RegulatorPID}}
+\doxysubsubsection{\texorpdfstring{symuluj()}{symuluj()}}
+{\footnotesize\ttfamily \label{class_regulator_p_i_d_af0237afe216e5dffe3403b6dcb815402} 
+double Regulator\+PID\+::symuluj (\begin{DoxyParamCaption}\item[{double}]{wejscie}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Symuluje odpowiedŸ regulatora na podstawie aktualnego uchybu. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em wejscie} & Aktualny uchyb (ró¿nica miêdzy wartoœci¹ zadan¹ a rzeczywist¹).\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Wartoœæ sygna³u steruj¹cego wygenerowana przez regulator.
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_obiekt_s_i_s_o_abfdedbe53fa179844ca17c89c0472698}{Obiekt\+SISO}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Regulator\+PID.\+h\item 
+Regulator\+PID.\+cpp\end{DoxyCompactItemize}

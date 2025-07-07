@@ -1,0 +1,22 @@
+\doxysection{Kompozyt\+Szeregowy.\+h}
+\hypertarget{_kompozyt_szeregowy_8h_source}{}\label{_kompozyt_szeregowy_8h_source}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ "{}Komponent.h"{}}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <list>}}
+\DoxyCodeLine{00004\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_kompozyt_szeregowy_a2d493040bdf7b67448168126390d3682}{KompozytSzeregowy}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_komponent}{Komponent}}}
+\DoxyCodeLine{00005\ \{}
+\DoxyCodeLine{00006\ \ \ \ \ std::list\ <Komponent*>\ komponenty;\ }
+\DoxyCodeLine{00007\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00011\ \ \ \ \ \mbox{\hyperlink{class_kompozyt_szeregowy_a2d493040bdf7b67448168126390d3682}{KompozytSzeregowy}}();}
+\DoxyCodeLine{00015\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_kompozyt_szeregowy_ac51d3ddee81e5e86a9b9418a55636b8c}{\string~KompozytSzeregowy}}();}
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_kompozyt_szeregowy_a4ea5cb4c8ea632bc591c9d413f6986a5}{dodaj}}(\mbox{\hyperlink{class_komponent}{Komponent}}*\ komponent);}
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_kompozyt_szeregowy_ac29891732203b04c1f6699107b28dcfa}{usun}}(\mbox{\hyperlink{class_komponent}{Komponent}}*\ komponent);}
+\DoxyCodeLine{00027\ \ \ \ \ \mbox{\hyperlink{class_komponent}{Komponent}}*\ \mbox{\hyperlink{class_kompozyt_szeregowy_ac7c49e91d5044522ed8dae3d232743de}{getChild}}(\textcolor{keywordtype}{int}\ n);}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_kompozyt_szeregowy_a0ff7362fc85ee373c5df60e709e5e47a}{symuluj}}(\textcolor{keywordtype}{double}\ wejscie);}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \};}
+\DoxyCodeLine{00035\ }
+
+\end{DoxyCode}

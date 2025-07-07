@@ -1,0 +1,46 @@
+\doxysection{Model\+ARX.\+h}
+\hypertarget{_model_a_r_x_8h_source}{}\label{_model_a_r_x_8h_source}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ "{}ObiektSISO.h"{}}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <deque>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <random>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00014\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_model_a_r_x_a21915c0690c31a4976b9bd6caa9598d6}{ModelARX}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_obiekt_s_i_s_o}{ObiektSISO}}\ \{}
+\DoxyCodeLine{00015\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00017\ \ \ \ \ std::vector<double>\ A;}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00020\ \ \ \ \ std::vector<double>\ B;}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00023\ \ \ \ \ std::deque<double>\ pamiecWejscie;}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00026\ \ \ \ \ std::deque<double>\ pamiecWyjscie;}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ opoznienie;}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keywordtype}{double}\ mocSzumu;}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \ \ \ \ std::default\_random\_engine\ generator;}
+\DoxyCodeLine{00035\ \ \ \ \ std::normal\_distribution<double>*\ rozkladSzumu;}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keywordtype}{double}\ dodajSzum();}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00051\ \ \ \ \ \mbox{\hyperlink{class_model_a_r_x_a21915c0690c31a4976b9bd6caa9598d6}{ModelARX}}(\textcolor{keyword}{const}\ std::vector<double>\&\ \_A,\ \textcolor{keyword}{const}\ std::vector<double>\&\ \_B,\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \_k,\ \textcolor{keywordtype}{int}\ \_mocSzumu);}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00057\ \ \ \ \ \mbox{\hyperlink{class_model_a_r_x_a21915c0690c31a4976b9bd6caa9598d6}{ModelARX}}(\textcolor{keyword}{const}\ std::string\&\ sciezkaPliku);}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00062\ \ \ \ \ \mbox{\hyperlink{class_model_a_r_x_abee5ae6d0ddc34baf68c5734133a9ca5}{\string~ModelARX}}();}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00068\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_model_a_r_x_a5565e68de0dce0095fb500e59367f1b0}{ZapiszDoPlikuJSON}}(\textcolor{keyword}{const}\ std::string\&\ filename)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00075\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_model_a_r_x_ae9f127da578e2efd938ca1821d76cb42}{symuluj}}(\textcolor{keywordtype}{double}\ wejscie)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00081\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_model_a_r_x_ad02ac61b1f5fd68e115350734a9cf610}{serialize}}(std::ofstream\&\ out)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00082\ }
+\DoxyCodeLine{00088\ \ \ \ \ \textcolor{keyword}{static}\ std::shared\_ptr<ModelARX>\ \mbox{\hyperlink{class_model_a_r_x_ac73e60d8d9601bc7cf31f05acc10de3a}{deserialize}}(std::istream\&\ in);}
+\DoxyCodeLine{00089\ \};}
+
+\end{DoxyCode}

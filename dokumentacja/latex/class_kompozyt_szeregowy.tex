@@ -1,0 +1,97 @@
+\doxysection{Kompozyt\+Szeregowy Class Reference}
+\hypertarget{class_kompozyt_szeregowy}{}\label{class_kompozyt_szeregowy}\index{KompozytSzeregowy@{KompozytSzeregowy}}
+Inheritance diagram for Kompozyt\+Szeregowy\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_kompozyt_szeregowy}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_kompozyt_szeregowy_a2d493040bdf7b67448168126390d3682}\label{class_kompozyt_szeregowy_a2d493040bdf7b67448168126390d3682} 
+{\bfseries Kompozyt\+Szeregowy} ()
+\begin{DoxyCompactList}\small\item\em Konstruktor domyœlny. \end{DoxyCompactList}\item 
+\Hypertarget{class_kompozyt_szeregowy_ac51d3ddee81e5e86a9b9418a55636b8c}\label{class_kompozyt_szeregowy_ac51d3ddee81e5e86a9b9418a55636b8c} 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Kompozyt\+Szeregowy} ()
+\begin{DoxyCompactList}\small\item\em Destruktor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_kompozyt_szeregowy_a4ea5cb4c8ea632bc591c9d413f6986a5}{dodaj}} (\mbox{\hyperlink{class_komponent}{Komponent}} \texorpdfstring{$\ast$}{*}komponent)
+\begin{DoxyCompactList}\small\item\em Dodaje komponent do kompozytu. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_kompozyt_szeregowy_ac29891732203b04c1f6699107b28dcfa}{usun}} (\mbox{\hyperlink{class_komponent}{Komponent}} \texorpdfstring{$\ast$}{*}komponent)
+\begin{DoxyCompactList}\small\item\em Usuwa komponent z kompozytu. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_komponent}{Komponent}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_kompozyt_szeregowy_ac7c49e91d5044522ed8dae3d232743de}{get\+Child}} (int n)
+\begin{DoxyCompactList}\small\item\em Zwraca dziecko o podanym indeksie. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_kompozyt_szeregowy_a0ff7362fc85ee373c5df60e709e5e47a}{symuluj}} (double wejscie)
+\begin{DoxyCompactList}\small\item\em Symuluje zachowanie kompozytu szeregowego na podstawie podanego sygna³u wejœciowego. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_komponent}{Komponent}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Komponent} ()=default
+\begin{DoxyCompactList}\small\item\em Wirtualny destruktor klasy {\ttfamily \doxylink{class_komponent}{Komponent}}. Umo¿liwia bezpieczne usuwanie obiektów dziedzicz¹cych przez wskaŸnik do klasy bazowej. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\label{doc-func-members}
+\Hypertarget{class_kompozyt_szeregowy_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_kompozyt_szeregowy_a4ea5cb4c8ea632bc591c9d413f6986a5}\index{KompozytSzeregowy@{KompozytSzeregowy}!dodaj@{dodaj}}
+\index{dodaj@{dodaj}!KompozytSzeregowy@{KompozytSzeregowy}}
+\doxysubsubsection{\texorpdfstring{dodaj()}{dodaj()}}
+{\footnotesize\ttfamily \label{class_kompozyt_szeregowy_a4ea5cb4c8ea632bc591c9d413f6986a5} 
+void Kompozyt\+Szeregowy\+::dodaj (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_komponent}{Komponent}} \texorpdfstring{$\ast$}{*}}]{komponent}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Dodaje komponent do kompozytu. 
+
+
+
+Reimplemented from \mbox{\hyperlink{class_komponent_acd984011b0d89fdb1ccf0f5f806c722e}{Komponent}}.
+
+\Hypertarget{class_kompozyt_szeregowy_ac7c49e91d5044522ed8dae3d232743de}\index{KompozytSzeregowy@{KompozytSzeregowy}!getChild@{getChild}}
+\index{getChild@{getChild}!KompozytSzeregowy@{KompozytSzeregowy}}
+\doxysubsubsection{\texorpdfstring{getChild()}{getChild()}}
+{\footnotesize\ttfamily \label{class_kompozyt_szeregowy_ac7c49e91d5044522ed8dae3d232743de} 
+\mbox{\hyperlink{class_komponent}{Komponent}} \texorpdfstring{$\ast$}{*} Kompozyt\+Szeregowy\+::get\+Child (\begin{DoxyParamCaption}\item[{int}]{n}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Zwraca dziecko o podanym indeksie. 
+
+
+
+Reimplemented from \mbox{\hyperlink{class_komponent_a550ca64fa8777206a59ce1c7a5ba8d63}{Komponent}}.
+
+\Hypertarget{class_kompozyt_szeregowy_a0ff7362fc85ee373c5df60e709e5e47a}\index{KompozytSzeregowy@{KompozytSzeregowy}!symuluj@{symuluj}}
+\index{symuluj@{symuluj}!KompozytSzeregowy@{KompozytSzeregowy}}
+\doxysubsubsection{\texorpdfstring{symuluj()}{symuluj()}}
+{\footnotesize\ttfamily \label{class_kompozyt_szeregowy_a0ff7362fc85ee373c5df60e709e5e47a} 
+double Kompozyt\+Szeregowy\+::symuluj (\begin{DoxyParamCaption}\item[{double}]{wejscie}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Symuluje zachowanie kompozytu szeregowego na podstawie podanego sygna³u wejœciowego. 
+
+
+
+Implements \mbox{\hyperlink{class_komponent_ac1e791f7c8f1e9b204ff1de949e76cd3}{Komponent}}.
+
+\Hypertarget{class_kompozyt_szeregowy_ac29891732203b04c1f6699107b28dcfa}\index{KompozytSzeregowy@{KompozytSzeregowy}!usun@{usun}}
+\index{usun@{usun}!KompozytSzeregowy@{KompozytSzeregowy}}
+\doxysubsubsection{\texorpdfstring{usun()}{usun()}}
+{\footnotesize\ttfamily \label{class_kompozyt_szeregowy_ac29891732203b04c1f6699107b28dcfa} 
+void Kompozyt\+Szeregowy\+::usun (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_komponent}{Komponent}} \texorpdfstring{$\ast$}{*}}]{komponent}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Usuwa komponent z kompozytu. 
+
+
+
+Reimplemented from \mbox{\hyperlink{class_komponent_a73f159429912cac0fa79bd0d7481b8d3}{Komponent}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Kompozyt\+Szeregowy.\+h\item 
+Kompozyt\+Szeregowy.\+cpp\end{DoxyCompactItemize}

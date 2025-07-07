@@ -1,0 +1,42 @@
+\doxysection{Petla\+UAR.\+h}
+\hypertarget{_petla_u_a_r_8h_source}{}\label{_petla_u_a_r_8h_source}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ "{}ObiektSISO.h"{}}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00012\ \textcolor{keyword}{enum\ class}\ trybPracyPetli\ \{\ OTWARTA,\ ZAMKNIETA\ \};}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00020\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_petla_u_a_r_a63e595cd95e8f3ce628dd2bf0638c403}{PetlaUAR}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_obiekt_s_i_s_o}{ObiektSISO}}}
+\DoxyCodeLine{00021\ \{}
+\DoxyCodeLine{00022\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00027\ \ \ \ \ trybPracyPetli\ \mbox{\hyperlink{class_petla_u_a_r_a97fe861f1d958bf01cf2b3e2d3797d35}{trybPracy}};}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00033\ \ \ \ \ std::vector<std::shared\_ptr<ObiektSISO>>\ \mbox{\hyperlink{class_petla_u_a_r_a18053174bc2877c1349b55ca3aa93d09}{skladniki}};}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_petla_u_a_r_aff17e4fd4cf917a725f9334cc082e5be}{poprzednieWyjscie}};}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_petla_u_a_r_a972d772e1239e079764f2fc89d3f3a25}{\string~PetlaUAR}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00052\ \ \ \ \ \mbox{\hyperlink{class_petla_u_a_r_a63e595cd95e8f3ce628dd2bf0638c403}{PetlaUAR}}(trybPracyPetli\ \_tryb);}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00058\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_petla_u_a_r_a977a9f98fcdf9fd9aa2add46bf5fcce0}{UstawTryb}}(trybPracyPetli\ tryb);}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00064\ \ \ \ \ \textcolor{keyword}{virtual}\ trybPracyPetli\ \mbox{\hyperlink{class_petla_u_a_r_a3be1b2b8add40e31d7133405fcb1a8a6}{PobierzTryb}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00071\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_petla_u_a_r_a4efb3e179a130a1dc30d251571ed0237}{DodajSkladnik}}(std::shared\_ptr<ObiektSISO>\ skladnik);}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00079\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_petla_u_a_r_a4efb3e179a130a1dc30d251571ed0237}{DodajSkladnik}}(std::shared\_ptr<ObiektSISO>\ skladnik,\ \textcolor{keywordtype}{size\_t}\ index);}
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00085\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_petla_u_a_r_a862d25628ccb5da2f44a2d52c02e2546}{UsunSkladnik}}(\textcolor{keywordtype}{size\_t}\ index);}
+\DoxyCodeLine{00086\ }
+\DoxyCodeLine{00093\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_petla_u_a_r_ad0931af39f15d33c012fb4d4230ee557}{symuluj}}(\textcolor{keywordtype}{double}\ wejscie)\ =\ 0;}
+\DoxyCodeLine{00094\ \};}
+\DoxyCodeLine{00095\ }
+\DoxyCodeLine{00096\ }
+
+\end{DoxyCode}

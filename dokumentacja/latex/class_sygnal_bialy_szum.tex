@@ -1,0 +1,114 @@
+\doxysection{Sygnal\+Bialy\+Szum Class Reference}
+\hypertarget{class_sygnal_bialy_szum}{}\label{class_sygnal_bialy_szum}\index{SygnalBialySzum@{SygnalBialySzum}}
+
+
+Dekorator dodaj¹cy bia³y szum do sygna³u. Szum generowany jest na podstawie rozk³adu jednostajnego w zakresie \mbox{[}-\/amplituda, amplituda\mbox{]}.  
+
+
+
+
+{\ttfamily \#include $<$Sygnal\+Bialy\+Szum.\+h$>$}
+
+Inheritance diagram for Sygnal\+Bialy\+Szum\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_sygnal_bialy_szum}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_sygnal_bialy_szum_a416e283a12ccfb3b72685484a7ab009a}{Sygnal\+Bialy\+Szum}} (std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_generator}{Generator}} $>$ \+\_\+generator, double \+\_\+amplituda)
+\begin{DoxyCompactList}\small\item\em Konstruktor dekoratora dodaj¹cego bia³y szum. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_sygnal_bialy_szum_a20509cf006f32cf492fa2050d8c5833d}{generuj}} () override
+\begin{DoxyCompactList}\small\item\em Generuje próbkê sygna³u z dodanym bia³ym szumem. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_sygnal_bialy_szum_a85fbf68bea9ec451359315a406cb79df}{serialize}} (std\+::ofstream \&out) const
+\begin{DoxyCompactList}\small\item\em Serializuje dekorator do pliku. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_generator_dekorator}{Generator\+Dekorator}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_generator_dekorator_a80a92c50f632375b3f4cf504af62616f}{Generator\+Dekorator}} (std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_generator}{Generator}} $>$ \+\_\+generator)
+\begin{DoxyCompactList}\small\item\em Konstruktor dekoratora generatora. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_generator}{Generator}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Generator} ()=default
+\begin{DoxyCompactList}\small\item\em Wirtualny destruktor klasy \doxylink{class_generator}{Generator}. Umo¿liwia bezpieczne usuwanie obiektów pochodnych przez wskaŸnik do klasy bazowej. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Public Attributes inherited from \mbox{\hyperlink{class_generator_dekorator}{Generator\+Dekorator}}}
+\begin{DoxyCompactItemize}
+\item 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_generator}{Generator}} $>$ {\bfseries dekorowany\+Generator}
+\begin{DoxyCompactList}\small\item\em WskaŸnik do dekorowanego generatora. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Dekorator dodaj¹cy bia³y szum do sygna³u. Szum generowany jest na podstawie rozk³adu jednostajnego w zakresie \mbox{[}-\/amplituda, amplituda\mbox{]}. 
+
+\label{doc-constructors}
+\Hypertarget{class_sygnal_bialy_szum_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_sygnal_bialy_szum_a416e283a12ccfb3b72685484a7ab009a}\index{SygnalBialySzum@{SygnalBialySzum}!SygnalBialySzum@{SygnalBialySzum}}
+\index{SygnalBialySzum@{SygnalBialySzum}!SygnalBialySzum@{SygnalBialySzum}}
+\doxysubsubsection{\texorpdfstring{SygnalBialySzum()}{SygnalBialySzum()}}
+{\footnotesize\ttfamily \label{class_sygnal_bialy_szum_a416e283a12ccfb3b72685484a7ab009a} 
+Sygnal\+Bialy\+Szum\+::\+Sygnal\+Bialy\+Szum (\begin{DoxyParamCaption}\item[{std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_generator}{Generator}} $>$}]{\+\_\+generator}{, }\item[{double}]{\+\_\+amplituda}{}\end{DoxyParamCaption})}
+
+
+
+Konstruktor dekoratora dodaj¹cego bia³y szum. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em generator} & Referencja do dekorowanego generatora.\\
+\hline
+{\em \+\_\+amplituda} & Maksymalna amplituda szumu.\\
+\hline
+\end{DoxyParams}
+
+
+\label{doc-func-members}
+\Hypertarget{class_sygnal_bialy_szum_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_sygnal_bialy_szum_a20509cf006f32cf492fa2050d8c5833d}\index{SygnalBialySzum@{SygnalBialySzum}!generuj@{generuj}}
+\index{generuj@{generuj}!SygnalBialySzum@{SygnalBialySzum}}
+\doxysubsubsection{\texorpdfstring{generuj()}{generuj()}}
+{\footnotesize\ttfamily \label{class_sygnal_bialy_szum_a20509cf006f32cf492fa2050d8c5833d} 
+double Sygnal\+Bialy\+Szum\+::generuj (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Generuje próbkê sygna³u z dodanym bia³ym szumem. 
+
+\begin{DoxyReturn}{Returns}
+Wartoœæ próbki sygna³u z dodanym szumem (double).
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_generator_dekorator_a649db772f70622f7b827b9c3515041a4}{Generator\+Dekorator}}.
+
+\Hypertarget{class_sygnal_bialy_szum_a85fbf68bea9ec451359315a406cb79df}\index{SygnalBialySzum@{SygnalBialySzum}!serialize@{serialize}}
+\index{serialize@{serialize}!SygnalBialySzum@{SygnalBialySzum}}
+\doxysubsubsection{\texorpdfstring{serialize()}{serialize()}}
+{\footnotesize\ttfamily \label{class_sygnal_bialy_szum_a85fbf68bea9ec451359315a406cb79df} 
+void Sygnal\+Bialy\+Szum\+::serialize (\begin{DoxyParamCaption}\item[{std\+::ofstream \&}]{out}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Serializuje dekorator do pliku. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em out} & Strumieñ wyjœciowy do zapisu danych.\\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_generator_acd60bdcd7d894f2fe86d42fb759e3151}{Generator}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Sygnal\+Bialy\+Szum.\+h\item 
+Sygnal\+Bialy\+Szum.\+cpp\end{DoxyCompactItemize}

@@ -1,0 +1,116 @@
+\doxysection{Sygnal\+Trojkatny\+Dekorator Class Reference}
+\hypertarget{class_sygnal_trojkatny_dekorator}{}\label{class_sygnal_trojkatny_dekorator}\index{SygnalTrojkatnyDekorator@{SygnalTrojkatnyDekorator}}
+
+
+Dekorator generuj¹cy sygna³ trójk¹tny. Generuje sygna³ o zadanej amplitudzie i okresie.  
+
+
+
+
+{\ttfamily \#include $<$Sygnal\+Trojkatny\+Dekorator.\+h$>$}
+
+Inheritance diagram for Sygnal\+Trojkatny\+Dekorator\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_sygnal_trojkatny_dekorator}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_sygnal_trojkatny_dekorator_a440ced01d849ee97a4e9a1343f4f9ce0}{Sygnal\+Trojkatny\+Dekorator}} (std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_generator}{Generator}} $>$ \+\_\+generator, double \+\_\+amplituda, int \+\_\+okres)
+\begin{DoxyCompactList}\small\item\em Konstruktor dekoratora generuj¹cego sygna³ trójk¹tny. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_sygnal_trojkatny_dekorator_a466cf1e72d6eddc3510e2f9d1d56afdb}{generuj}} () override
+\begin{DoxyCompactList}\small\item\em Generuje kolejn¹ próbkê sygna³u trójk¹tnego. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_sygnal_trojkatny_dekorator_a07f4be00bdff9d9b5157229840a2e6fa}{serialize}} (std\+::ofstream \&out) const
+\begin{DoxyCompactList}\small\item\em Serializuje dekorator do podanego strumienia wyjœciowego. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_generator_dekorator}{Generator\+Dekorator}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_generator_dekorator_a80a92c50f632375b3f4cf504af62616f}{Generator\+Dekorator}} (std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_generator}{Generator}} $>$ \+\_\+generator)
+\begin{DoxyCompactList}\small\item\em Konstruktor dekoratora generatora. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_generator}{Generator}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Generator} ()=default
+\begin{DoxyCompactList}\small\item\em Wirtualny destruktor klasy \doxylink{class_generator}{Generator}. Umo¿liwia bezpieczne usuwanie obiektów pochodnych przez wskaŸnik do klasy bazowej. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Public Attributes inherited from \mbox{\hyperlink{class_generator_dekorator}{Generator\+Dekorator}}}
+\begin{DoxyCompactItemize}
+\item 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_generator}{Generator}} $>$ {\bfseries dekorowany\+Generator}
+\begin{DoxyCompactList}\small\item\em WskaŸnik do dekorowanego generatora. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Dekorator generuj¹cy sygna³ trójk¹tny. Generuje sygna³ o zadanej amplitudzie i okresie. 
+
+\label{doc-constructors}
+\Hypertarget{class_sygnal_trojkatny_dekorator_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_sygnal_trojkatny_dekorator_a440ced01d849ee97a4e9a1343f4f9ce0}\index{SygnalTrojkatnyDekorator@{SygnalTrojkatnyDekorator}!SygnalTrojkatnyDekorator@{SygnalTrojkatnyDekorator}}
+\index{SygnalTrojkatnyDekorator@{SygnalTrojkatnyDekorator}!SygnalTrojkatnyDekorator@{SygnalTrojkatnyDekorator}}
+\doxysubsubsection{\texorpdfstring{SygnalTrojkatnyDekorator()}{SygnalTrojkatnyDekorator()}}
+{\footnotesize\ttfamily \label{class_sygnal_trojkatny_dekorator_a440ced01d849ee97a4e9a1343f4f9ce0} 
+Sygnal\+Trojkatny\+Dekorator\+::\+Sygnal\+Trojkatny\+Dekorator (\begin{DoxyParamCaption}\item[{std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_generator}{Generator}} $>$}]{\+\_\+generator}{, }\item[{double}]{\+\_\+amplituda}{, }\item[{int}]{\+\_\+okres}{}\end{DoxyParamCaption})}
+
+
+
+Konstruktor dekoratora generuj¹cego sygna³ trójk¹tny. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em generator} & Unikalny wskaŸnik do dekorowanego generatora.\\
+\hline
+{\em \+\_\+amplituda} & Amplituda sygna³u trójk¹tnego.\\
+\hline
+{\em \+\_\+okres} & Okres sygna³u trójk¹tnego w liczbie próbek.\\
+\hline
+\end{DoxyParams}
+
+
+\label{doc-func-members}
+\Hypertarget{class_sygnal_trojkatny_dekorator_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_sygnal_trojkatny_dekorator_a466cf1e72d6eddc3510e2f9d1d56afdb}\index{SygnalTrojkatnyDekorator@{SygnalTrojkatnyDekorator}!generuj@{generuj}}
+\index{generuj@{generuj}!SygnalTrojkatnyDekorator@{SygnalTrojkatnyDekorator}}
+\doxysubsubsection{\texorpdfstring{generuj()}{generuj()}}
+{\footnotesize\ttfamily \label{class_sygnal_trojkatny_dekorator_a466cf1e72d6eddc3510e2f9d1d56afdb} 
+double Sygnal\+Trojkatny\+Dekorator\+::generuj (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Generuje kolejn¹ próbkê sygna³u trójk¹tnego. 
+
+\begin{DoxyReturn}{Returns}
+Wartoœæ próbki sygna³u trójk¹tnego (double).
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_generator_dekorator_a649db772f70622f7b827b9c3515041a4}{Generator\+Dekorator}}.
+
+\Hypertarget{class_sygnal_trojkatny_dekorator_a07f4be00bdff9d9b5157229840a2e6fa}\index{SygnalTrojkatnyDekorator@{SygnalTrojkatnyDekorator}!serialize@{serialize}}
+\index{serialize@{serialize}!SygnalTrojkatnyDekorator@{SygnalTrojkatnyDekorator}}
+\doxysubsubsection{\texorpdfstring{serialize()}{serialize()}}
+{\footnotesize\ttfamily \label{class_sygnal_trojkatny_dekorator_a07f4be00bdff9d9b5157229840a2e6fa} 
+void Sygnal\+Trojkatny\+Dekorator\+::serialize (\begin{DoxyParamCaption}\item[{std\+::ofstream \&}]{out}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Serializuje dekorator do podanego strumienia wyjœciowego. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em out} & Strumieñ wyjœciowy do zapisu.\\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_generator_acd60bdcd7d894f2fe86d42fb759e3151}{Generator}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Sygnal\+Trojkatny\+Dekorator.\+h\item 
+Sygnal\+Trojkatny\+Dekorator.\+cpp\end{DoxyCompactItemize}

@@ -1,0 +1,31 @@
+\doxysection{Sygnal\+Sinus\+Dekorator.\+h}
+\hypertarget{_sygnal_sinus_dekorator_8h_source}{}\label{_sygnal_sinus_dekorator_8h_source}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ "{}GeneratorDekorator.h"{}}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{keyword}{constexpr}\ \textcolor{keyword}{auto}\ M\_PI\ =\ 3.14159265358979323846;}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00010\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_sygnal_sinus_dekorator_ac0548c7a7142e26d8446ba4b56730b51}{SygnalSinusDekorator}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_generator_dekorator_a80a92c50f632375b3f4cf504af62616f}{GeneratorDekorator}}}
+\DoxyCodeLine{00011\ \{}
+\DoxyCodeLine{00015\ \ \ \ \ \textcolor{keywordtype}{double}\ amplituda;}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keywordtype}{double}\ czestotliwosc;}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keywordtype}{double}\ omega;}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keywordtype}{double}\ probkowanie;}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keywordtype}{double}\ n1\ =\ 0;\ \textcolor{comment}{//\ n-\/1}}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keywordtype}{double}\ n2\ =\ 0;\ \textcolor{comment}{//\ n-\/2}}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00050\ \ \ \ \ \mbox{\hyperlink{class_sygnal_sinus_dekorator_ac0548c7a7142e26d8446ba4b56730b51}{SygnalSinusDekorator}}(std::unique\_ptr<Generator>\ \_generator,\ \textcolor{keywordtype}{double}\ \_amplituda,\ \textcolor{keywordtype}{double}\ \_czestotliwosc,\ \textcolor{keywordtype}{double}\ \_probkowanie);}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_sygnal_sinus_dekorator_a73f2879881eeb810913b5b8973a291f4}{generuj}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00062\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_sygnal_sinus_dekorator_a951dedc4c732b507bb8db0d036f927cf}{serialize}}(std::ofstream\&\ out)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00063\ \};}
+
+\end{DoxyCode}

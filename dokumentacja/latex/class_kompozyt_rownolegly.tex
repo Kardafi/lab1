@@ -1,0 +1,97 @@
+\doxysection{Kompozyt\+Rownolegly Class Reference}
+\hypertarget{class_kompozyt_rownolegly}{}\label{class_kompozyt_rownolegly}\index{KompozytRownolegly@{KompozytRownolegly}}
+Inheritance diagram for Kompozyt\+Rownolegly\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_kompozyt_rownolegly}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_kompozyt_rownolegly_a70835353f6d2e8b6c3d077c3528a13c2}\label{class_kompozyt_rownolegly_a70835353f6d2e8b6c3d077c3528a13c2} 
+{\bfseries Kompozyt\+Rownolegly} ()
+\begin{DoxyCompactList}\small\item\em Konstruktor domyœlny. \end{DoxyCompactList}\item 
+\Hypertarget{class_kompozyt_rownolegly_ae1abeaff0684d714b8c85ae0663e5902}\label{class_kompozyt_rownolegly_ae1abeaff0684d714b8c85ae0663e5902} 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Kompozyt\+Rownolegly} ()
+\begin{DoxyCompactList}\small\item\em Destruktor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_kompozyt_rownolegly_aadab2b01f30789ff9e101b48c4abe9a7}{dodaj}} (\mbox{\hyperlink{class_komponent}{Komponent}} \texorpdfstring{$\ast$}{*}komponent)
+\begin{DoxyCompactList}\small\item\em Dodaje komponent do kompozytu. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_kompozyt_rownolegly_a6fb3d42da9d96203a72d08120fadeb3c}{usun}} (\mbox{\hyperlink{class_komponent}{Komponent}} \texorpdfstring{$\ast$}{*}komponent)
+\begin{DoxyCompactList}\small\item\em Usuwa komponent z kompozytu. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_komponent}{Komponent}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_kompozyt_rownolegly_a611ca6a49f328626f352e557618632d4}{get\+Child}} (int n)
+\begin{DoxyCompactList}\small\item\em Zwraca dziecko o podanym indeksie. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_kompozyt_rownolegly_ae98e03f1cfec9b0058e296f09c028b15}{symuluj}} (double wejscie)
+\begin{DoxyCompactList}\small\item\em Symuluje zachowanie kompozytu równoleg³ego na podstawie podanego sygna³u wejœciowego. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_komponent}{Komponent}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Komponent} ()=default
+\begin{DoxyCompactList}\small\item\em Wirtualny destruktor klasy {\ttfamily \doxylink{class_komponent}{Komponent}}. Umo¿liwia bezpieczne usuwanie obiektów dziedzicz¹cych przez wskaŸnik do klasy bazowej. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\label{doc-func-members}
+\Hypertarget{class_kompozyt_rownolegly_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_kompozyt_rownolegly_aadab2b01f30789ff9e101b48c4abe9a7}\index{KompozytRownolegly@{KompozytRownolegly}!dodaj@{dodaj}}
+\index{dodaj@{dodaj}!KompozytRownolegly@{KompozytRownolegly}}
+\doxysubsubsection{\texorpdfstring{dodaj()}{dodaj()}}
+{\footnotesize\ttfamily \label{class_kompozyt_rownolegly_aadab2b01f30789ff9e101b48c4abe9a7} 
+void Kompozyt\+Rownolegly\+::dodaj (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_komponent}{Komponent}} \texorpdfstring{$\ast$}{*}}]{komponent}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Dodaje komponent do kompozytu. 
+
+
+
+Reimplemented from \mbox{\hyperlink{class_komponent_acd984011b0d89fdb1ccf0f5f806c722e}{Komponent}}.
+
+\Hypertarget{class_kompozyt_rownolegly_a611ca6a49f328626f352e557618632d4}\index{KompozytRownolegly@{KompozytRownolegly}!getChild@{getChild}}
+\index{getChild@{getChild}!KompozytRownolegly@{KompozytRownolegly}}
+\doxysubsubsection{\texorpdfstring{getChild()}{getChild()}}
+{\footnotesize\ttfamily \label{class_kompozyt_rownolegly_a611ca6a49f328626f352e557618632d4} 
+\mbox{\hyperlink{class_komponent}{Komponent}} \texorpdfstring{$\ast$}{*} Kompozyt\+Rownolegly\+::get\+Child (\begin{DoxyParamCaption}\item[{int}]{n}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Zwraca dziecko o podanym indeksie. 
+
+
+
+Reimplemented from \mbox{\hyperlink{class_komponent_a550ca64fa8777206a59ce1c7a5ba8d63}{Komponent}}.
+
+\Hypertarget{class_kompozyt_rownolegly_ae98e03f1cfec9b0058e296f09c028b15}\index{KompozytRownolegly@{KompozytRownolegly}!symuluj@{symuluj}}
+\index{symuluj@{symuluj}!KompozytRownolegly@{KompozytRownolegly}}
+\doxysubsubsection{\texorpdfstring{symuluj()}{symuluj()}}
+{\footnotesize\ttfamily \label{class_kompozyt_rownolegly_ae98e03f1cfec9b0058e296f09c028b15} 
+double Kompozyt\+Rownolegly\+::symuluj (\begin{DoxyParamCaption}\item[{double}]{wejscie}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Symuluje zachowanie kompozytu równoleg³ego na podstawie podanego sygna³u wejœciowego. 
+
+
+
+Implements \mbox{\hyperlink{class_komponent_ac1e791f7c8f1e9b204ff1de949e76cd3}{Komponent}}.
+
+\Hypertarget{class_kompozyt_rownolegly_a6fb3d42da9d96203a72d08120fadeb3c}\index{KompozytRownolegly@{KompozytRownolegly}!usun@{usun}}
+\index{usun@{usun}!KompozytRownolegly@{KompozytRownolegly}}
+\doxysubsubsection{\texorpdfstring{usun()}{usun()}}
+{\footnotesize\ttfamily \label{class_kompozyt_rownolegly_a6fb3d42da9d96203a72d08120fadeb3c} 
+void Kompozyt\+Rownolegly\+::usun (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_komponent}{Komponent}} \texorpdfstring{$\ast$}{*}}]{komponent}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Usuwa komponent z kompozytu. 
+
+
+
+Reimplemented from \mbox{\hyperlink{class_komponent_a73f159429912cac0fa79bd0d7481b8d3}{Komponent}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Kompozyt\+Rownolegly.\+h\item 
+Kompozyt\+Rownolegly.\+cpp\end{DoxyCompactItemize}

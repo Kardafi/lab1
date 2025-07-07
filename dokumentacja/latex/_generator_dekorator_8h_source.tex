@@ -1,0 +1,17 @@
+\doxysection{Generator\+Dekorator.\+h}
+\hypertarget{_generator_dekorator_8h_source}{}\label{_generator_dekorator_8h_source}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ "{}Generator.h"{}}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00008\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_generator_dekorator_a80a92c50f632375b3f4cf504af62616f}{GeneratorDekorator}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_generator}{Generator}}}
+\DoxyCodeLine{00009\ \{}
+\DoxyCodeLine{00010\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00014\ \ \ \ \ std::unique\_ptr<Generator>\ \mbox{\hyperlink{class_generator_dekorator_a5548b250c463faf7e6c0b542897c8aac}{dekorowanyGenerator}};}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00020\ \ \ \ \ \mbox{\hyperlink{class_generator_dekorator_a80a92c50f632375b3f4cf504af62616f}{GeneratorDekorator}}(std::unique\_ptr<Generator>\ \_generator);}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_generator_dekorator_a649db772f70622f7b827b9c3515041a4}{generuj}}()\ =\ 0;}
+\DoxyCodeLine{00027\ \};}
+
+\end{DoxyCode}

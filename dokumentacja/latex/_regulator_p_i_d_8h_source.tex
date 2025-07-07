@@ -1,0 +1,44 @@
+\doxysection{Regulator\+PID.\+h}
+\hypertarget{_regulator_p_i_d_8h_source}{}\label{_regulator_p_i_d_8h_source}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ "{}ObiektSISO.h"{}}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <deque>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <sstream>}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00015\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_regulator_p_i_d_a746ca93e5c70d5f22ae9d13355ea4dd8}{RegulatorPID}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_obiekt_s_i_s_o}{ObiektSISO}}}
+\DoxyCodeLine{00016\ \{}
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keywordtype}{double}\ k;\ }
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keywordtype}{double}\ Ti;\ }
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keywordtype}{double}\ Td;\ }
+\DoxyCodeLine{00020\ \ \ \ \ std::vector<double>\ pamiecUchyl;\ }
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00027\ \ \ \ \ \mbox{\hyperlink{class_regulator_p_i_d_a746ca93e5c70d5f22ae9d13355ea4dd8}{RegulatorPID}}(\textcolor{keywordtype}{double}\ \_k);}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00034\ \ \ \ \ \mbox{\hyperlink{class_regulator_p_i_d_a746ca93e5c70d5f22ae9d13355ea4dd8}{RegulatorPID}}(\textcolor{keywordtype}{double}\ \_k,\ \textcolor{keywordtype}{double}\ \_Ti);}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00042\ \ \ \ \ \mbox{\hyperlink{class_regulator_p_i_d_a746ca93e5c70d5f22ae9d13355ea4dd8}{RegulatorPID}}(\textcolor{keywordtype}{double}\ \_k,\ \textcolor{keywordtype}{double}\ \_Ti,\ \textcolor{keywordtype}{double}\ \_Td);}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00047\ \ \ \ \ \mbox{\hyperlink{class_regulator_p_i_d_acff6c3727cb5c5ee8b49829cfba0043d}{\string~RegulatorPID}}();}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_regulator_p_i_d_af0237afe216e5dffe3403b6dcb815402}{symuluj}}(\textcolor{keywordtype}{double}\ wejscie)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00060\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_regulator_p_i_d_a2ab1bcf615d4ba04a26d7dbae108f672}{setK}}(\textcolor{keywordtype}{double}\ \_k);}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00066\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_regulator_p_i_d_a0bef218ad9e48334cff7126f255eb71d}{setTi}}(\textcolor{keywordtype}{double}\ \_Ti);}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00072\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_regulator_p_i_d_a36682e2841e9496f682686d860def183}{setTd}}(\textcolor{keywordtype}{double}\ \_Td);}
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00078\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_regulator_p_i_d_ace68d9bb9b46b13483383b80765891c2}{serialize}}(std::ostream\&\ out)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00079\ }
+\DoxyCodeLine{00085\ \ \ \ \ \textcolor{keyword}{static}\ std::shared\_ptr<RegulatorPID>\ \mbox{\hyperlink{class_regulator_p_i_d_a1cc0281330c9d9770260626ffc47a693}{deserialize}}(std::istream\&\ in);}
+\DoxyCodeLine{00086\ }
+\DoxyCodeLine{00087\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00093\ \ \ \ \ \textcolor{keywordtype}{int}\ SprawdzNastawe(\textcolor{keywordtype}{double}\ \_nastawa);}
+\DoxyCodeLine{00094\ \};}
+\DoxyCodeLine{00095\ }
+
+\end{DoxyCode}

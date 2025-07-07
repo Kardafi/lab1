@@ -1,0 +1,131 @@
+\doxysection{Komponent Class Reference}
+\hypertarget{class_komponent}{}\label{class_komponent}\index{Komponent@{Komponent}}
+
+
+Abstrakcyjna klasa bazowa reprezentuj¹ca komponent w strukturze z³o¿onego uk³adu. Dziedziczy po {\ttfamily \doxylink{class_obiekt_s_i_s_o}{Obiekt\+SISO}} i umo¿liwia implementacjê wzorca Composite.  
+
+
+
+
+{\ttfamily \#include $<$Komponent.\+h$>$}
+
+Inheritance diagram for Komponent\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_komponent}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual double \mbox{\hyperlink{class_komponent_ac1e791f7c8f1e9b204ff1de949e76cd3}{symuluj}} (double wejscie)=0
+\begin{DoxyCompactList}\small\item\em Metoda czysto wirtualna do symulacji dzia³ania komponentu dla danego wejœcia. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_komponent_acd984011b0d89fdb1ccf0f5f806c722e}{dodaj}} (\mbox{\hyperlink{class_komponent}{Komponent}} \texorpdfstring{$\ast$}{*}komponent)
+\begin{DoxyCompactList}\small\item\em Dodaje komponent podrzêdny do bie¿¹cego komponentu. Domyœlnie nie robi nic — powinno byæ nadpisane w klasach z³o¿onych. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_komponent_a73f159429912cac0fa79bd0d7481b8d3}{usun}} (\mbox{\hyperlink{class_komponent}{Komponent}} \texorpdfstring{$\ast$}{*}komponent)
+\begin{DoxyCompactList}\small\item\em Usuwa komponent podrzêdny z bie¿¹cego komponentu. Domyœlnie nie robi nic — powinno byæ nadpisane w klasach z³o¿onych. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{class_komponent}{Komponent}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_komponent_a550ca64fa8777206a59ce1c7a5ba8d63}{get\+Child}} (int n)
+\begin{DoxyCompactList}\small\item\em Zwraca wskaŸnik do podrzêdnego komponentu o podanym indeksie. Domyœlnie zwraca {\ttfamily nullptr} — powinno byæ nadpisane w klasach z³o¿onych. \end{DoxyCompactList}\item 
+\Hypertarget{class_komponent_a98d06a8b98f6e4b2ba78a69d9d60550d}\label{class_komponent_a98d06a8b98f6e4b2ba78a69d9d60550d} 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Komponent} ()=default
+\begin{DoxyCompactList}\small\item\em Wirtualny destruktor klasy {\ttfamily \doxylink{class_komponent}{Komponent}}. Umo¿liwia bezpieczne usuwanie obiektów dziedzicz¹cych przez wskaŸnik do klasy bazowej. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Abstrakcyjna klasa bazowa reprezentuj¹ca komponent w strukturze z³o¿onego uk³adu. Dziedziczy po {\ttfamily \doxylink{class_obiekt_s_i_s_o}{Obiekt\+SISO}} i umo¿liwia implementacjê wzorca Composite. 
+
+\label{doc-func-members}
+\Hypertarget{class_komponent_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_komponent_acd984011b0d89fdb1ccf0f5f806c722e}\index{Komponent@{Komponent}!dodaj@{dodaj}}
+\index{dodaj@{dodaj}!Komponent@{Komponent}}
+\doxysubsubsection{\texorpdfstring{dodaj()}{dodaj()}}
+{\footnotesize\ttfamily \label{class_komponent_acd984011b0d89fdb1ccf0f5f806c722e} 
+void Komponent\+::dodaj (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_komponent}{Komponent}} \texorpdfstring{$\ast$}{*}}]{komponent}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Dodaje komponent podrzêdny do bie¿¹cego komponentu. Domyœlnie nie robi nic — powinno byæ nadpisane w klasach z³o¿onych. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em komponent} & WskaŸnik do dodawanego komponentu.\\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented in \mbox{\hyperlink{class_kompozyt_rownolegly_aadab2b01f30789ff9e101b48c4abe9a7}{Kompozyt\+Rownolegly}}, and \mbox{\hyperlink{class_kompozyt_szeregowy_a4ea5cb4c8ea632bc591c9d413f6986a5}{Kompozyt\+Szeregowy}}.
+
+\Hypertarget{class_komponent_a550ca64fa8777206a59ce1c7a5ba8d63}\index{Komponent@{Komponent}!getChild@{getChild}}
+\index{getChild@{getChild}!Komponent@{Komponent}}
+\doxysubsubsection{\texorpdfstring{getChild()}{getChild()}}
+{\footnotesize\ttfamily \label{class_komponent_a550ca64fa8777206a59ce1c7a5ba8d63} 
+\mbox{\hyperlink{class_komponent}{Komponent}} \texorpdfstring{$\ast$}{*} Komponent\+::get\+Child (\begin{DoxyParamCaption}\item[{int}]{n}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Zwraca wskaŸnik do podrzêdnego komponentu o podanym indeksie. Domyœlnie zwraca {\ttfamily nullptr} — powinno byæ nadpisane w klasach z³o¿onych. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em n} & Indeks komponentu podrzêdnego.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+WskaŸnik do komponentu podrzêdnego lub {\ttfamily nullptr}, jeœli nie istnieje.
+\end{DoxyReturn}
+
+
+Reimplemented in \mbox{\hyperlink{class_kompozyt_rownolegly_a611ca6a49f328626f352e557618632d4}{Kompozyt\+Rownolegly}}, and \mbox{\hyperlink{class_kompozyt_szeregowy_ac7c49e91d5044522ed8dae3d232743de}{Kompozyt\+Szeregowy}}.
+
+\Hypertarget{class_komponent_ac1e791f7c8f1e9b204ff1de949e76cd3}\index{Komponent@{Komponent}!symuluj@{symuluj}}
+\index{symuluj@{symuluj}!Komponent@{Komponent}}
+\doxysubsubsection{\texorpdfstring{symuluj()}{symuluj()}}
+{\footnotesize\ttfamily \label{class_komponent_ac1e791f7c8f1e9b204ff1de949e76cd3} 
+virtual double Komponent\+::symuluj (\begin{DoxyParamCaption}\item[{double}]{wejscie}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Metoda czysto wirtualna do symulacji dzia³ania komponentu dla danego wejœcia. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em wejscie} & Wartoœæ wejœciowa sygna³u typu {\ttfamily double}.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Wartoœæ wyjœciowa po przetworzeniu przez komponent.
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_obiekt_s_i_s_o_abfdedbe53fa179844ca17c89c0472698}{Obiekt\+SISO}}.
+
+
+
+Implemented in \mbox{\hyperlink{class_kompozyt_rownolegly_ae98e03f1cfec9b0058e296f09c028b15}{Kompozyt\+Rownolegly}}, \mbox{\hyperlink{class_kompozyt_szeregowy_a0ff7362fc85ee373c5df60e709e5e47a}{Kompozyt\+Szeregowy}}, and \mbox{\hyperlink{class_model_a_r_x_komponent_a10fac3dd0f09bff6edaa204458824ec2}{Model\+ARXKomponent}}.
+
+\Hypertarget{class_komponent_a73f159429912cac0fa79bd0d7481b8d3}\index{Komponent@{Komponent}!usun@{usun}}
+\index{usun@{usun}!Komponent@{Komponent}}
+\doxysubsubsection{\texorpdfstring{usun()}{usun()}}
+{\footnotesize\ttfamily \label{class_komponent_a73f159429912cac0fa79bd0d7481b8d3} 
+void Komponent\+::usun (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_komponent}{Komponent}} \texorpdfstring{$\ast$}{*}}]{komponent}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Usuwa komponent podrzêdny z bie¿¹cego komponentu. Domyœlnie nie robi nic — powinno byæ nadpisane w klasach z³o¿onych. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em komponent} & WskaŸnik do usuwanego komponentu.\\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented in \mbox{\hyperlink{class_kompozyt_rownolegly_a6fb3d42da9d96203a72d08120fadeb3c}{Kompozyt\+Rownolegly}}, and \mbox{\hyperlink{class_kompozyt_szeregowy_ac29891732203b04c1f6699107b28dcfa}{Kompozyt\+Szeregowy}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Komponent.\+h\item 
+Komponent.\+cpp\end{DoxyCompactItemize}
