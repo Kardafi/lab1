@@ -13,6 +13,11 @@
 #include "SygnalSinusDekorator.h"
 #include "OgraniczenieAmplitudyDekorator.h"
 
+/// <summary>
+/// Klasa odpowiadaj¹ca za interfejs konsolowy aplikacji.
+/// Zarz¹dza konfiguracj¹ sygna³u, modelem ARX i regulatorem PID,
+/// umo¿liwiaj¹c ich edycjê, zapis/wczytanie oraz przeprowadzenie symulacji.
+/// </summary>
 class Interfejs
 {
 private:
